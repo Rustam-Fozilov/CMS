@@ -3,19 +3,25 @@ package com.example.cms;
 import com.example.cms.JDBC.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class AdminMenuController implements Initializable {
@@ -59,7 +65,10 @@ public class AdminMenuController implements Initializable {
     private Rectangle rect3;
 
     @FXML
-    private Circle avatar;
+    private AnchorPane defaultAdminProfilePane;
+
+    @FXML
+    private BorderPane AdminPane;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -73,23 +82,15 @@ public class AdminMenuController implements Initializable {
         dropShadow.setRadius(25);
         vBoxMenuBar.setEffect(dropShadow);
 
-        Image img = new Image("avatar.png");
-        avatar.setFill(new ImagePattern(img));
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("my-profile.fxml"));
+            defaultAdminProfilePane.getChildren().removeAll();
+            defaultAdminProfilePane.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        DropShadow dropShadow2 = new DropShadow();
-        dropShadow2.setBlurType(BlurType.GAUSSIAN);
-        dropShadow2.setColor(Color.rgb(170, 213, 255));
-        dropShadow2.setHeight(24);
-        dropShadow2.setWidth(24);
-        dropShadow2.setOffsetY(8);
-        dropShadow2.setRadius(22);
-        vboxProfile.setEffect(dropShadow2);
-        //Database database = new Database();
 
-//        database.getAdminInformation();
-//
-//        ArrayList<AdminInformation> adminsInformation = database.getAdminsInformation();
-//        ArrayList<TeacherInformation> teachersInformation = database.getTeachersInformation();
     }
 
     public void myProfile(ActionEvent actionEvent) {
@@ -101,6 +102,14 @@ public class AdminMenuController implements Initializable {
         btnManageCourse.setTextFill(Color.BLACK);
         btnManageStudent.setTextFill(Color.BLACK);
         btnMyProfile.setStyle("-fx-background-color: #fff");
+
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("my-profile.fxml"));
+            defaultAdminProfilePane.getChildren().removeAll();
+            defaultAdminProfilePane.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void manageCourse(ActionEvent actionEvent) {
@@ -112,6 +121,14 @@ public class AdminMenuController implements Initializable {
         btnManageStudent.setTextFill(Color.BLACK);
         btnMyProfile.setTextFill(Color.BLACK);
         btnManageCourse.setStyle("-fx-background-color: #fff");
+
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("manage-course.fxml"));
+            defaultAdminProfilePane.getChildren().removeAll();
+            defaultAdminProfilePane.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void manageStudent(ActionEvent actionEvent) {
@@ -123,5 +140,17 @@ public class AdminMenuController implements Initializable {
         btnManageCourse.setTextFill(Color.BLACK);
         btnMyProfile.setTextFill(Color.BLACK);
         btnManageStudent.setStyle("-fx-background-color: #fff");
+
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("manage-student.fxml"));
+            defaultAdminProfilePane.getChildren().removeAll();
+            defaultAdminProfilePane.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void logOut(ActionEvent actionEvent) {
+
     }
 }

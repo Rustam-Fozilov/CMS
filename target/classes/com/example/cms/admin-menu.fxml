@@ -3,17 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1150.0" style="-fx-background-color: #F3FCFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.AdminMenuController">
+<BorderPane fx:id="AdminPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1150.0" style="-fx-background-color: #F3FCFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.AdminMenuController">
    <left>
       <VBox fx:id="vBoxMenuBar" prefHeight="720.0" prefWidth="260.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
          <children>
@@ -87,7 +85,7 @@
                   </Button>
                </children>
             </HBox>
-            <Button alignment="CENTER" contentDisplay="RIGHT" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="chiqish" textAlignment="CENTER" textFill="#0073ff">
+            <Button alignment="CENTER" contentDisplay="RIGHT" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="chiqish" textAlignment="CENTER" textFill="#0073ff">
                <font>
                   <Font size="18.0" />
                </font>
@@ -102,114 +100,6 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <VBox fx:id="vboxProfile" layoutX="195.0" layoutY="79.0" prefHeight="560.0" prefWidth="500.0" style="-fx-background-color: #fff;">
-               <children>
-                  <Circle fx:id="avatar" fill="DODGERBLUE" radius="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
-                     <VBox.margin>
-                        <Insets left="170.0" top="30.0" />
-                     </VBox.margin>
-                  </Circle>
-                  <HBox maxWidth="340.0" prefHeight="40.0" prefWidth="340.0">
-                     <VBox.margin>
-                        <Insets left="80.0" top="30.0" />
-                     </VBox.margin>
-                     <children>
-                        <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="62.0" text="F.I.O">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="Temur Hasanov" textAlignment="RIGHT">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </HBox>
-                  <HBox maxWidth="340.0" prefHeight="40.0" prefWidth="340.0">
-                     <children>
-                        <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="135.0" text="Telefon:">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="+998 97 767 20 97" textAlignment="RIGHT">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <VBox.margin>
-                        <Insets left="80.0" top="15.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox maxWidth="340.0" prefHeight="40.0" prefWidth="340.0">
-                     <children>
-                        <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="121.0" text="Email:">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="example@mail.com" textAlignment="RIGHT">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <VBox.margin>
-                        <Insets left="80.0" top="15.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox maxWidth="340.0" prefHeight="40.0" prefWidth="340.0">
-                     <children>
-                        <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="175.0" text="Username:">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="Alexandr" textAlignment="RIGHT">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <VBox.margin>
-                        <Insets left="80.0" top="15.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox maxWidth="340.0" prefHeight="40.0" prefWidth="340.0">
-                     <children>
-                        <Label contentDisplay="CENTER" prefHeight="40.0" prefWidth="94.0" text="Parol:">
-                           <font>
-                              <Font name="System Bold" size="20.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="12345678" textAlignment="RIGHT">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <VBox.margin>
-                        <Insets left="80.0" top="15.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="yangilash" textAlignment="CENTER" textFill="#0073ff">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <VBox.margin>
-                        <Insets left="260.0" top="10.0" />
-                     </VBox.margin>
-                  </Button>
-               </children>
-            </VBox>
-         </children>
-      </AnchorPane>
+      <AnchorPane fx:id="defaultAdminProfilePane" prefHeight="720.0" prefWidth="890.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

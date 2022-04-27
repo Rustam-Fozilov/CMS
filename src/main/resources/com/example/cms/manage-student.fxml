@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="manageStudentPane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.ManageStudentController">
+   <children>
+      <VBox layoutX="80.0" layoutY="130.0" prefHeight="460.0" prefWidth="730.0">
+         <children>
+            <Button fx:id="btnAddStudent" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="90.0" prefWidth="730.0" style="-fx-background-color: #1C92FF; -fx-background-radius: 10px;" text="Yangi student qo'shish" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="35.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnUpdateStudent" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="90.0" prefWidth="730.0" style="-fx-background-color: #1C92FF; -fx-background-radius: 10px;" text="Student ma'lumotlarini yangilash" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="35.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnDeleteStudent" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="90.0" prefWidth="730.0" style="-fx-background-color: #1C92FF; -fx-background-radius: 10px;" text="Student ma'lumotlarini o'chirish" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnShowStudent" alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="90.0" prefWidth="730.0" style="-fx-background-color: #1C92FF; -fx-background-radius: 10px;" text="Student ma'lumotlarini ko'rish" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="35.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="35.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
