@@ -1,17 +1,24 @@
 package com.example.cms;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ManageCourseController implements Initializable {
+    @FXML
+    private AnchorPane manageCoursePane;
 
     @FXML
     private Button btnAddCourse;
@@ -40,5 +47,46 @@ public class ManageCourseController implements Initializable {
         btnUpdateCourse.setEffect(dropShadow);
         btnDeleteCourse.setEffect(dropShadow);
         btnShowCourse.setEffect(dropShadow);
+    }
+
+    public void addCourse(ActionEvent actionEvent) {
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("add-course.fxml"));
+            manageCoursePane.getChildren().removeAll();
+            manageCoursePane.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateCourse(ActionEvent actionEvent) {
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("update-course.fxml"));
+            manageCoursePane.getChildren().removeAll();
+            manageCoursePane.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteCourse(ActionEvent actionEvent) {
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("delete-course.fxml"));
+            manageCoursePane.getChildren().removeAll();
+            manageCoursePane.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showCourse(ActionEvent actionEvent) {
+        try {
+            Parent fxml = FXMLLoader.load(getClass().getResource("show-course.fxml"));
+            manageCoursePane.getChildren().removeAll();
+            manageCoursePane.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
