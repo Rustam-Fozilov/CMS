@@ -5,20 +5,26 @@ import com.example.cms.JDBC.Database;
 import com.example.cms.JDBC.TeacherInformation;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.BlurType;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 
-public class LoginController {
+public class LoginController implements Initializable {
     @FXML
     private Label label;
 
@@ -78,5 +84,18 @@ public class LoginController {
             label.setText("username yoki parol xato :(");
             label.setStyle("-fx-text-fill: red");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setBlurType(BlurType.GAUSSIAN);
+        dropShadow.setColor(Color.rgb(179, 213, 255));
+        dropShadow.setHeight(20);
+        dropShadow.setWidth(20);
+        dropShadow.setOffsetX(0);
+        dropShadow.setOffsetY(10);
+        dropShadow.setRadius(21);
+        btnLogin.setEffect(dropShadow);
     }
 }
