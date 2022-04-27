@@ -49,17 +49,20 @@ public class LoginController implements Initializable {
         ArrayList<TeacherInformation> teachersInformation = database.getTeachersInformation();
 
         boolean isLogged = true;
+        boolean test;
 
         for (AdminInformation admin : adminsInformation) {
             if (admin.getUsername().equals(username) && admin.getParol().equals(password)) {
                 btnLogin.getScene().getWindow().hide();
                 Stage login = new Stage();
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("admin-menu.fxml")));
+                Parent root = FXMLLoader.load(getClass().getResource("admin-menu.fxml"));
                 Scene scene = new Scene(root);
                 login.setTitle("Admin panel");
                 login.setResizable(false);
                 login.setScene(scene);
                 login.show();
+
+                //MyProfileController myProfileController =
             } else {
                 isLogged = false;
             }

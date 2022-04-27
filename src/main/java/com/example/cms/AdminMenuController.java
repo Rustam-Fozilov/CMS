@@ -40,20 +40,20 @@ public class AdminMenuController implements Initializable {
     @FXML
     private Button btnMyProfile;
 
-    @FXML
-    private Label labelFIO;
-
-    @FXML
-    private Label labelPhone;
-
-    @FXML
-    private Label labelEmail;
-
-    @FXML
-    private Label labelUsername;
-
-    @FXML
-    private Label labelPassword;
+//    @FXML
+//    private Label labelFIO;
+//
+//    @FXML
+//    private Label labelPhone;
+//
+//    @FXML
+//    private Label labelEmail;
+//
+//    @FXML
+//    private Label labelUsername;
+//
+//    @FXML
+//    private Label labelPassword;
 
     @FXML
     private Rectangle rect1;
@@ -89,8 +89,6 @@ public class AdminMenuController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
     public void myProfile(ActionEvent actionEvent) {

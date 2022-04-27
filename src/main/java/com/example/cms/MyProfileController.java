@@ -2,6 +2,7 @@ package com.example.cms;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -14,6 +15,21 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MyProfileController implements Initializable {
+    @FXML
+    private Label labelFIO;
+
+    @FXML
+    private Label labelPhone;
+
+    @FXML
+    private Label labelEmail;
+
+    @FXML
+    private Label labelUsername;
+
+    @FXML
+    private Label labelPassword;
+
     @FXML
     private VBox vboxProfile;
 
