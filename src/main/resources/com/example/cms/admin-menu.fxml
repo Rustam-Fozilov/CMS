@@ -121,7 +121,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="Temur Hasanov" textAlignment="RIGHT">
+                        <Label fx:id="labelFIO" alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="Temur Hasanov" textAlignment="RIGHT">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -135,7 +135,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="+998 97 767 20 97" textAlignment="RIGHT">
+                        <Label fx:id="labelPhone" alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="+998 97 767 20 97" textAlignment="RIGHT">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -152,7 +152,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="example@mail.com" textAlignment="RIGHT">
+                        <Label fx:id="labelEmail" alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="example@mail.com" textAlignment="RIGHT">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -169,7 +169,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="Alexandr" textAlignment="RIGHT">
+                        <Label fx:id="labelUsername" alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="Alexandr" textAlignment="RIGHT">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -186,7 +186,7 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="12345678" textAlignment="RIGHT">
+                        <Label fx:id="labelPassword" alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="308.0" text="12345678" textAlignment="RIGHT">
                            <font>
                               <Font size="20.0" />
                            </font>
@@ -196,7 +196,7 @@
                         <Insets left="80.0" top="15.0" />
                      </VBox.margin>
                   </HBox>
-                  <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="yangilash" textAlignment="CENTER" textFill="#0073ff">
+                  <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="41.0" prefWidth="144.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="yangilash" textAlignment="CENTER" textFill="#0073ff">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -204,7 +204,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <VBox.margin>
-                        <Insets left="260.0" top="10.0" />
+                        <Insets left="280.0" top="10.0" />
                      </VBox.margin>
                   </Button>
                </children>

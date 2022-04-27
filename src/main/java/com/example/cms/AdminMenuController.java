@@ -1,9 +1,11 @@
 package com.example.cms;
 
+import com.example.cms.JDBC.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
@@ -31,6 +33,21 @@ public class AdminMenuController implements Initializable {
 
     @FXML
     private Button btnMyProfile;
+
+    @FXML
+    private Label labelFIO;
+
+    @FXML
+    private Label labelPhone;
+
+    @FXML
+    private Label labelEmail;
+
+    @FXML
+    private Label labelUsername;
+
+    @FXML
+    private Label labelPassword;
 
     @FXML
     private Rectangle rect1;
@@ -67,6 +84,12 @@ public class AdminMenuController implements Initializable {
         dropShadow2.setOffsetY(8);
         dropShadow2.setRadius(22);
         vboxProfile.setEffect(dropShadow2);
+        //Database database = new Database();
+
+//        database.getAdminInformation();
+//
+//        ArrayList<AdminInformation> adminsInformation = database.getAdminsInformation();
+//        ArrayList<TeacherInformation> teachersInformation = database.getTeachersInformation();
     }
 
     public void myProfile(ActionEvent actionEvent) {

@@ -91,10 +91,10 @@ public class LoginController implements Initializable {
         DropShadow dropShadow = new DropShadow();
         dropShadow.setBlurType(BlurType.GAUSSIAN);
         dropShadow.setColor(Color.rgb(179, 213, 255));
-        dropShadow.setHeight(20);
-        dropShadow.setWidth(20);
+        dropShadow.setHeight(15);
+        dropShadow.setWidth(15);
         dropShadow.setOffsetX(0);
-        dropShadow.setOffsetY(10);
+        dropShadow.setOffsetY(8);
         dropShadow.setRadius(21);
         btnLogin.setEffect(dropShadow);
     }
