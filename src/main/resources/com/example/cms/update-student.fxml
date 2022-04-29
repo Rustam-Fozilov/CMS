@@ -10,11 +10,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="manageStudentPane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="updateStudentPane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.updateStudentController">
    <children>
       <VBox prefHeight="223.0">
          <children>
-            <Button mnemonicParsing="false" text="cancel">
+            <Button mnemonicParsing="false" onAction="#goBack" text="Back">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                <VBox.margin>
                   <Insets left="45.0" top="40.0" />
                </VBox.margin>

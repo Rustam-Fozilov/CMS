@@ -10,14 +10,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="manageStudentPane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="addCoursePane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.addCourseController">
    <children>
       <VBox prefHeight="140.0">
          <children>
-            <Button mnemonicParsing="false" text="cancel">
+            <Button mnemonicParsing="false" onAction="#goBack" text="Back">
                <VBox.margin>
                   <Insets left="45.0" top="40.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Label opacity="0.5" text="Yangi kurs qo'shish">
                <font>
