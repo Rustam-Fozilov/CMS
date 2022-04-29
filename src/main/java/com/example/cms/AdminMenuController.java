@@ -60,6 +60,15 @@ public class AdminMenuController implements Initializable {
     @FXML
     private BorderPane AdminPane;
 
+    private int id;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    } // getId 0 ga teng cqvoti prablema;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DropShadow dropShadow = new DropShadow();
@@ -73,12 +82,17 @@ public class AdminMenuController implements Initializable {
         vBoxMenuBar.setEffect(dropShadow);
 
         try {
-            Parent fxml = FXMLLoader.load(getClass().getResource("my-profile.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("my-profile.fxml"));
+            Parent root = loader.load();
+            MyProfileController ctrl2 = loader.getController();
+            ctrl2.setId(getId());
+
             defaultAdminProfilePane.getChildren().removeAll();
-            defaultAdminProfilePane.getChildren().setAll(fxml);
+            defaultAdminProfilePane.getChildren().setAll(root);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     public void myProfile(ActionEvent actionEvent) {

@@ -1,5 +1,7 @@
 package com.example.cms;
 
+import com.example.cms.JDBC.AdminInformation;
+import com.example.cms.JDBC.Database;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +17,7 @@ import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MyProfileController implements Initializable {
@@ -39,6 +42,16 @@ public class MyProfileController implements Initializable {
     @FXML
     private Circle avatar;
 
+    public int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Image img = new Image("avatar.png");
@@ -52,6 +65,28 @@ public class MyProfileController implements Initializable {
         dropShadow.setOffsetY(8);
         dropShadow.setRadius(22);
         vboxProfile.setEffect(dropShadow);
+
+        boolean bool = true;
+
+        Database db = new Database();
+        try {
+            db.getAdminInformation();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        ArrayList<AdminInformation> adminsInformation = db.getAdminsInformation();
+        for (AdminInformation admin : adminsInformation) {
+            if (this.getId() == admin.getAdmin_id()) {
+                labelEmail.setText(admin.getEmail());
+            } else {
+                bool = false;
+            }
+        }
+
+        if(!bool) {
+            labelEmail.setText("bool tengmas");
+        }
+
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
 //        LoginController loginController = fxmlLoader.getController();
 //        User user = loginController.getCurrentUser();

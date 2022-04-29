@@ -1,13 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:controller="com.example.cms.showStudentController" xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="showStudentPane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.showStudentController">
+   <children>
+      <VBox>
+         <children>
+            <Button mnemonicParsing="false" onAction="#goBack" text="Back">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets left="45.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+            <Label text="Student ma'lumotlarini ko'rish">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="45.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <ScrollPane layoutX="87.0" layoutY="164.0" prefHeight="490.0" prefWidth="731.0">
+         <content>
+            <TableView fx:id="table" prefHeight="487.0" prefWidth="731.0">
+              <columns>
+                <TableColumn fx:id="colId" prefWidth="47.0" text="id" />
+                <TableColumn fx:id="colName" prefWidth="100.0" text="Ismi" />
+                  <TableColumn fx:id="colSurname" prefWidth="106.0" text="Familiyasi" />
+                  <TableColumn fx:id="colPhone" prefWidth="105.0" text="Telefon" />
+                  <TableColumn fx:id="colEmail" prefWidth="167.0" text="Email" />
+                  <TableColumn fx:id="colSubject" minWidth="2.0" prefWidth="97.0" text="Fani" />
+                  <TableColumn fx:id="colGroup" minWidth="2.0" prefWidth="108.0" text="Guruhi" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+   </children>
 </AnchorPane>

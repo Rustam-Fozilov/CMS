@@ -112,4 +112,10 @@ public class Database {
     public ArrayList<TeacherInformation> getTeachersInformation() {
         return teachersInformation;
     }
-}
+
+    public static Connection getConnection() throws SQLException {
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+
+        return conn;
+    }
+ }

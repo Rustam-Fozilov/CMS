@@ -14,6 +14,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -52,10 +54,35 @@ public class LoginController implements Initializable {
 
         boolean isLogged = true;
 
-        for (AdminInformation admin : adminsInformation) {
-            if (admin.getUsername().equals(username) && admin.getParol().equals(password)) {
+//        for (AdminInformation admin: adminsInformation) {
+//            if (admin.getUsername().equals(username) && admin.getParol().equals(password)) {
+//                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("admin-menu.fxml"));
+//                Parent root2 = loader.load();
+//                AdminMenuController ctrl = loader.getController();
+//                ctrl.setId(admin.getAdmin_id());
+////                System.out.println(admin.getAdmin_id());
+//
+//                btnLogin.getScene().getWindow().hide();
+//                Stage login = new Stage();
+//                Parent root = FXMLLoader.load(getClass().getResource("admin-menu.fxml"));
+//                Scene scene = new Scene(root);
+//                login.setTitle("Admin panel");
+//                login.setResizable(false);
+//                login.setScene(scene);
+//                login.show();
+//            } else {
+//                isLogged = false;
+//            }
+//        }
+
+        for (int i = 0; i < adminsInformation.size(); i++) {
+            if (adminsInformation.get(i).getUsername().equals(username) && adminsInformation.get(i).getParol().equals(password)) {
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("admin-menu.fxml"));
+                Parent root2 = loader.load();
+                AdminMenuController ctrl = loader.getController();
+                ctrl.setId(adminsInformation.get(i).getAdmin_id()); // jonatilayotganda admin id sini tori jonatvoti, lekn AdminMenuControllerda bu id sout qlib korilsa faqat 0 cqvoti
+
                 btnLogin.getScene().getWindow().hide();
-//                currentUser = new User(admin.getIsmi(), admin.getFamiliyasi(), admin.getTelefon(), admin.getEmail(), admin.getUsername(), admin.getParol());
                 Stage login = new Stage();
                 Parent root = FXMLLoader.load(getClass().getResource("admin-menu.fxml"));
                 Scene scene = new Scene(root);
@@ -104,5 +131,19 @@ public class LoginController implements Initializable {
 
     public User getCurrentUser(){
         return this.currentUser;
+    }
+
+    public void enter(KeyEvent event) throws IOException, ClassNotFoundException {
+        KeyCode kc = event.getCode();
+        if(kc == KeyCode.ENTER) {
+            accessToLogin();
+            String username = uname.getText();
+            String password = passwd.getText();
+
+            if (username != null && password != null) {
+                btnLogin.requestFocus();
+            }
+        }
+
     }
 }
