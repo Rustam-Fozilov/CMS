@@ -85,7 +85,7 @@
                   </Button>
                </children>
             </HBox>
-            <Button alignment="CENTER" contentDisplay="RIGHT" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="chiqish" textAlignment="CENTER" textFill="#0073ff">
+            <Button fx:id="btnLogOut" alignment="CENTER" contentDisplay="RIGHT" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="chiqish" textAlignment="CENTER" textFill="#0073ff">
                <font>
                   <Font size="18.0" />
                </font>

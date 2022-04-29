@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.BlurType;
@@ -18,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -40,20 +42,8 @@ public class AdminMenuController implements Initializable {
     @FXML
     private Button btnMyProfile;
 
-//    @FXML
-//    private Label labelFIO;
-//
-//    @FXML
-//    private Label labelPhone;
-//
-//    @FXML
-//    private Label labelEmail;
-//
-//    @FXML
-//    private Label labelUsername;
-//
-//    @FXML
-//    private Label labelPassword;
+    @FXML
+    private Button btnLogOut;
 
     @FXML
     private Rectangle rect1;
@@ -148,7 +138,12 @@ public class AdminMenuController implements Initializable {
         }
     }
 
-    public void logOut(ActionEvent actionEvent) {
-
+    public void logOut(ActionEvent actionEvent) throws IOException {
+        btnLogOut.getScene().getWindow().hide();
+        Stage main = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        Scene scene = new Scene(root);
+        main.setScene(scene);
+        main.show();
     }
 }

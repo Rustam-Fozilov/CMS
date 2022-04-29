@@ -19,7 +19,7 @@
                   <Insets left="45.0" top="40.0" />
                </VBox.margin>
             </Button>
-            <Label text="Yangi kurs qo'shish">
+            <Label opacity="0.5" text="Yangi kurs qo'shish">
                <font>
                   <Font size="18.0" />
                </font>

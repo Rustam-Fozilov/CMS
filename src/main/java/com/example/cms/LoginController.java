@@ -37,6 +37,8 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField passwd;
 
+    private User currentUser;
+
     public void accessToLogin() throws IOException, ClassNotFoundException {
         Database database = new Database();
         database.getAdminInformation();
@@ -49,11 +51,11 @@ public class LoginController implements Initializable {
         ArrayList<TeacherInformation> teachersInformation = database.getTeachersInformation();
 
         boolean isLogged = true;
-        boolean test;
 
         for (AdminInformation admin : adminsInformation) {
             if (admin.getUsername().equals(username) && admin.getParol().equals(password)) {
                 btnLogin.getScene().getWindow().hide();
+//                currentUser = new User(admin.getIsmi(), admin.getFamiliyasi(), admin.getTelefon(), admin.getEmail(), admin.getUsername(), admin.getParol());
                 Stage login = new Stage();
                 Parent root = FXMLLoader.load(getClass().getResource("admin-menu.fxml"));
                 Scene scene = new Scene(root);
@@ -61,8 +63,6 @@ public class LoginController implements Initializable {
                 login.setResizable(false);
                 login.setScene(scene);
                 login.show();
-
-                //MyProfileController myProfileController =
             } else {
                 isLogged = false;
             }
@@ -72,7 +72,7 @@ public class LoginController implements Initializable {
             if (teacher.getUsername().equals(username) && teacher.getParol().equals(password)) {
                 btnLogin.getScene().getWindow().hide();
                 Stage login = new Stage();
-                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("teacher-menu.fxml")));
+                Parent root = FXMLLoader.load(getClass().getResource("teacher-menu.fxml"));
                 Scene scene = new Scene(root);
                 login.setTitle("Teacher panel");
                 login.setResizable(false);
@@ -100,5 +100,9 @@ public class LoginController implements Initializable {
         dropShadow.setOffsetY(8);
         dropShadow.setRadius(21);
         btnLogin.setEffect(dropShadow);
+    }
+
+    public User getCurrentUser(){
+        return this.currentUser;
     }
 }

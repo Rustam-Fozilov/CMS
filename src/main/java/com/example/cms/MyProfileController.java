@@ -1,7 +1,9 @@
 package com.example.cms;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
@@ -11,6 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -49,5 +52,11 @@ public class MyProfileController implements Initializable {
         dropShadow.setOffsetY(8);
         dropShadow.setRadius(22);
         vboxProfile.setEffect(dropShadow);
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+//        LoginController loginController = fxmlLoader.getController();
+//        User user = loginController.getCurrentUser();
+//        labelEmail.setText(user.getEmail());
+//        labelUsername.setText(user.getUsername());
+
     }
 }
