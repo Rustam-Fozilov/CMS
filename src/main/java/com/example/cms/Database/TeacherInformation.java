@@ -1,4 +1,4 @@
-package com.example.cms.JDBC;
+package com.example.cms.Database;
 
 public class TeacherInformation {
     private int teacher_id;

@@ -1,8 +1,8 @@
 package com.example.cms;
 
-import com.example.cms.JDBC.AdminInformation;
-import com.example.cms.JDBC.Database;
-import com.example.cms.JDBC.TeacherInformation;
+import com.example.cms.Database.AdminInformation;
+import com.example.cms.Database.Database;
+import com.example.cms.Database.TeacherInformation;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 

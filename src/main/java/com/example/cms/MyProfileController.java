@@ -1,11 +1,9 @@
 package com.example.cms;
 
-import com.example.cms.JDBC.AdminInformation;
-import com.example.cms.JDBC.Database;
+import com.example.cms.Database.AdminInformation;
+import com.example.cms.Database.Database;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;

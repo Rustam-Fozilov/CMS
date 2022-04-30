@@ -1,4 +1,4 @@
-package com.example.cms.JDBC;
+package com.example.cms.Database;
 
 import java.io.IOException;
 import java.sql.*;
@@ -112,6 +112,40 @@ public class Database {
     public ArrayList<TeacherInformation> getTeachersInformation() {
         return teachersInformation;
     }
+
+    ArrayList<CourseInformation> coursesInformation = new ArrayList<>();
+    public void getCourseInformation() throws IOException, ClassNotFoundException {
+        try {
+            Connection con;
+            PreparedStatement ps;
+            ResultSet rs;
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+
+            ps = con.prepareStatement("SELECT * FROM courses");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                int course_id = rs.getInt("courseId");
+                String nomi = rs.getString("Nomi");
+                String davomiyligi = rs.getString("Davomiyligi");
+                String oqituvchi = rs.getString("Oqituvchi");
+                String narxi = rs.getString("Narxi");
+
+                coursesInformation.add(new CourseInformation(course_id, nomi, davomiyligi, oqituvchi, narxi));
+            }
+            rs.close();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public ArrayList<CourseInformation> getCoursesInformation() {
+        return coursesInformation;
+    }
+
 
     public static Connection getConnection() throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");

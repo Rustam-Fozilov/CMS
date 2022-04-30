@@ -1,7 +1,7 @@
 package com.example.cms;
 
-import com.example.cms.JDBC.Database;
-import com.example.cms.JDBC.StudentTable;
+import com.example.cms.Database.Database;
+import com.example.cms.Database.StudentTable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

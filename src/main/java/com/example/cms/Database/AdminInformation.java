@@ -1,4 +1,4 @@
-package com.example.cms.JDBC;
+package com.example.cms.Database;
 
 public class AdminInformation {
     private int admin_id;
