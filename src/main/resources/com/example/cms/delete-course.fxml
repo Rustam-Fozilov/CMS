@@ -37,7 +37,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 1px; -fx-border-radius: 10px;">
+                  <TextField fx:id="nameField" prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 1px; -fx-border-radius: 10px;">
                      <HBox.margin>
                         <Insets left="30.0" />
                      </HBox.margin>
@@ -52,7 +52,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="536.0" layoutY="189.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #0073FF; -fx-background-radius: 10px;" text="o'chirish" textAlignment="RIGHT" textFill="WHITE">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="536.0" layoutY="189.0" mnemonicParsing="false" onAction="#deleteCourse" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #0073FF; -fx-background-radius: 10px;" text="o'chirish" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
@@ -60,5 +60,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="statusLabel" layoutX="498.0" layoutY="251.0" textAlignment="RIGHT">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="updateStudentPane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.updateStudentController">
    <children>
-      <VBox prefHeight="223.0">
+      <VBox prefHeight="189.0" prefWidth="697.0">
          <children>
             <Button mnemonicParsing="false" onAction="#goBack" text="Back">
                <cursor>
@@ -37,7 +37,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="53.0" prefWidth="222.0" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 1px; -fx-border-radius: 10px;">
+                  <TextField fx:id="oldEmailField" prefHeight="53.0" prefWidth="222.0" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 1px; -fx-border-radius: 10px;">
                      <HBox.margin>
                         <Insets left="20.0" />
                      </HBox.margin>
@@ -55,12 +55,12 @@
                   <Font name="System Bold" size="26.0" />
                </font>
                <VBox.margin>
-                  <Insets left="45.0" top="20.0" />
+                  <Insets left="45.0" />
                </VBox.margin>
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="205.0" layoutY="241.0" prefHeight="360.0" prefWidth="480.0">
+      <VBox layoutX="205.0" layoutY="214.0" prefHeight="360.0" prefWidth="480.0">
          <children>
             <HBox prefHeight="50.0" prefWidth="200.0">
                <children>
@@ -69,7 +69,7 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="nameField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -77,7 +77,7 @@
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets bottom="25.0" left="100.0" />
+                        <Insets bottom="15.0" left="100.0" />
                      </HBox.margin>
                   </TextField>
                </children>
@@ -89,7 +89,7 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="surnameField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -97,7 +97,7 @@
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets bottom="25.0" left="30.0" />
+                        <Insets bottom="15.0" left="30.0" />
                      </HBox.margin>
                   </TextField>
                </children>
@@ -109,7 +109,7 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="phoneField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -117,27 +117,7 @@
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets bottom="25.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="50.0" prefWidth="200.0">
-               <children>
-                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="116.0" text="Manzili">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Label>
-                  <TextField prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <HBox.margin>
-                        <Insets bottom="25.0" left="60.0" />
+                        <Insets bottom="15.0" />
                      </HBox.margin>
                   </TextField>
                </children>
@@ -149,7 +129,7 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="newEmailField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -157,14 +137,54 @@
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets bottom="25.0" left="60.0" />
+                        <Insets bottom="15.0" left="60.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="116.0" text="Fani">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="subjectField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="60.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="116.0" text="Guruhi">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="groupField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="60.0" />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
          </children>
       </VBox>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="535.0" layoutY="624.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #0073FF; -fx-background-radius: 10px;" text="yangilash" textAlignment="RIGHT" textFill="WHITE">
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="535.0" layoutY="624.0" mnemonicParsing="false" onAction="#updateStudent" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #0073FF; -fx-background-radius: 10px;" text="yangilash" textAlignment="RIGHT" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
@@ -172,5 +192,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Label fx:id="statusLabel" layoutX="205.0" layoutY="637.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

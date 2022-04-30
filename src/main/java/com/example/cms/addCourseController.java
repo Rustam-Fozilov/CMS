@@ -1,7 +1,5 @@
 package com.example.cms;
 
-import com.example.cms.Database.AdminInformation;
-import com.example.cms.Database.CourseInformation;
 import com.example.cms.Database.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +14,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class addCourseController {
     @FXML
@@ -37,23 +34,22 @@ public class addCourseController {
     @FXML
     private Label statusLabel;
 
-    boolean isNumeric = true;
+    boolean isNumeric = false;
 
-    public void addCourse(ActionEvent actionEvent) throws IOException, ClassNotFoundException, SQLException {
+    public void addCourse(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         Database database = new Database();
         database.getCourseInformation();
-
-        // ArrayList<CourseInformation> coursesInformation = database.getCoursesInformation();
 
         for (int i = 0; i < priceField.getText().length(); i++) {
             if (Character.isDigit(priceField.getText().charAt(i))) {
                 isNumeric = true;
-            } else {
-                isNumeric = false;
             }
         }
 
-        if (isNumeric) {
+        if (nameField.getText().equals("") || durationField.getText().equals("") || teacherField.getText().equals("") || priceField.getText().equals("")) {
+            statusLabel.setText("Barcha maydonlar to'ldirilishi shart");
+            statusLabel.setStyle("-fx-text-fill: red");
+        } else if (isNumeric) {
             try {
                 Connection con;
                 PreparedStatement ps;
@@ -69,7 +65,7 @@ public class addCourseController {
                 ps.setInt(4, Integer.parseInt(priceField.getText()));
                 ps.executeUpdate();
 
-                statusLabel.setText("Muvaffaqiyatli bajarildi");
+                statusLabel.setText("Muvaffaqiyatli qo'shildi");
                 statusLabel.setStyle("-fx-text-fill: green");
             } catch (SQLException e) {
                 System.out.println(e);
@@ -78,7 +74,6 @@ public class addCourseController {
             statusLabel.setText("Xatolik bor ma'lumotlarni to'g'ri kiriting");
             statusLabel.setStyle("-fx-text-fill: red");
         }
-
     }
 
     public void goBack(ActionEvent actionEvent) {

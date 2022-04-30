@@ -37,7 +37,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 1px; -fx-border-radius: 10px;">
+                  <TextField fx:id="oldNameField" prefHeight="50.0" prefWidth="270.0" style="-fx-background-color: transparent; -fx-border-color: #000; -fx-border-width: 1px; -fx-border-radius: 10px;">
                      <HBox.margin>
                         <Insets left="30.0" />
                      </HBox.margin>
@@ -69,7 +69,7 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="newNameField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -89,7 +89,7 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="durationField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -109,7 +109,7 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="teacherField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -129,7 +129,7 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="priceField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -142,7 +142,7 @@
                   </TextField>
                </children>
             </HBox>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #0073FF; -fx-background-radius: 10px;" text="yangilash" textAlignment="RIGHT" textFill="WHITE">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#updateCourse" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #0073FF; -fx-background-radius: 10px;" text="yangilash" textAlignment="RIGHT" textFill="WHITE">
                <VBox.margin>
                   <Insets left="330.0" />
                </VBox.margin>
@@ -155,5 +155,10 @@
             </Button>
          </children>
       </VBox>
+      <Label fx:id="statusLabel" layoutX="509.0" layoutY="626.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
