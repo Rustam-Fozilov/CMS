@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="addStudentPane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.Admin.Students.addStudentController">
+   <children>
+      <VBox prefHeight="140.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#goBack" text="Back">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets left="45.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+            <Label opacity="0.5" text="Yangi student qo'shish">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="45.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Student ma'lumotlarini kiriting">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="45.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="205.0" layoutY="197.0" prefWidth="480.0">
+         <children>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="80.0" text="Ismi">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="100.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="150.0" text="Familiyasi">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="surnameField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="30.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="180.0" text="Telefon">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phoneField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="118.0" text="Email">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emailField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="60.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="118.0" text="Fani">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="subjectField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="60.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="118.0" text="Guruhi">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="groupField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="60.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#addStudent" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #0073FF; -fx-background-radius: 10px;" text="qo'shish" textAlignment="RIGHT" textFill="WHITE">
+               <VBox.margin>
+                  <Insets left="330.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+      <Label fx:id="statusLabel" layoutX="205.0" layoutY="162.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

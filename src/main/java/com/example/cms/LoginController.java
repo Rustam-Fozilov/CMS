@@ -1,5 +1,6 @@
 package com.example.cms;
 
+import com.example.cms.Admin.AdminMenuController;
 import com.example.cms.Database.AdminInformation;
 import com.example.cms.Database.Database;
 import com.example.cms.Database.TeacherInformation;
@@ -76,14 +77,14 @@ public class LoginController implements Initializable {
 
         for (int i = 0; i < adminsInformation.size(); i++) {
             if (adminsInformation.get(i).getUsername().equals(username) && adminsInformation.get(i).getParol().equals(password)) {
-                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("admin-menu.fxml"));
+                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Admin/admin-menu.fxml"));
                 Parent root2 = loader.load();
                 AdminMenuController ctrl = loader.getController();
                 ctrl.setId(adminsInformation.get(i).getAdmin_id()); // jonatilayotganda admin id sini tori jonatvoti, lekn AdminMenuControllerda bu id sout qlib korilsa faqat 0 cqvoti
 
                 btnLogin.getScene().getWindow().hide();
                 Stage login = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("admin-menu.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("Admin/admin-menu.fxml"));
                 Scene scene = new Scene(root);
                 login.setTitle("Admin panel");
                 login.setResizable(false);
@@ -98,7 +99,7 @@ public class LoginController implements Initializable {
             if (teacher.getUsername().equals(username) && teacher.getParol().equals(password)) {
                 btnLogin.getScene().getWindow().hide();
                 Stage login = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("teacher-menu.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("Teacher/teacher-menu.fxml"));
                 Scene scene = new Scene(root);
                 login.setTitle("Teacher panel");
                 login.setResizable(false);

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="AdminPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1150.0" style="-fx-background-color: #F3FCFF;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.Admin.AdminMenuController">
+   <left>
+      <VBox fx:id="vBoxMenuBar" prefHeight="720.0" prefWidth="260.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#0073ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin oynasi" textAlignment="CENTER" wrappingWidth="259.7841796875">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" top="30.0" />
+               </VBox.margin>
+            </Text>
+            <Rectangle arcWidth="5.0" fill="#0073ff" height="3.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="260.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </Rectangle>
+            <HBox prefHeight="40.0" prefWidth="260.0">
+               <children>
+                  <Rectangle fx:id="rect1" fill="#0073ff" height="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="5.0">
+                     <HBox.margin>
+                        <Insets right="20.0" top="5.0" />
+                     </HBox.margin>
+                  </Rectangle>
+                  <Button fx:id="btnMyProfile" minHeight="20.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="37.0" prefWidth="161.0" style="-fx-background-color: #fff;" text="Mening profilim" textFill="#0073ff">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="260.0">
+               <children>
+                  <Rectangle fx:id="rect2" fill="#0073ff" height="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="5.0">
+                     <HBox.margin>
+                        <Insets right="20.0" top="5.0" />
+                     </HBox.margin>
+                  </Rectangle>
+                  <Button fx:id="btnManageCourse" minHeight="20.0" mnemonicParsing="false" onAction="#manageCourse" prefHeight="37.0" prefWidth="195.0" style="-fx-background-color: #fff;" text="Kurslarni boshqarish">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="260.0">
+               <children>
+                  <Rectangle fx:id="rect3" fill="#0073ff" height="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="5.0">
+                     <HBox.margin>
+                        <Insets right="20.0" top="5.0" />
+                     </HBox.margin>
+                  </Rectangle>
+                  <Button fx:id="btnManageStudent" minHeight="20.0" mnemonicParsing="false" onAction="#manageStudent" prefHeight="37.0" prefWidth="225.0" style="-fx-background-color: #fff;" text="Studentlarni boshqarish">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+            <Button fx:id="btnLogOut" alignment="CENTER" contentDisplay="RIGHT" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="chiqish" textAlignment="CENTER" textFill="#0073ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" top="350.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane fx:id="defaultAdminProfilePane" prefHeight="720.0" prefWidth="890.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
