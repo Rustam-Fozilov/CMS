@@ -85,6 +85,23 @@
                   </Button>
                </children>
             </HBox>
+            <HBox prefHeight="40.0" prefWidth="260.0">
+               <children>
+                  <Rectangle fx:id="rect4" fill="#0073ff" height="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="5.0">
+                     <HBox.margin>
+                        <Insets right="23.0" top="5.0" />
+                     </HBox.margin>
+                  </Rectangle>
+                  <Button fx:id="btnManageTeacher" minHeight="20.0" mnemonicParsing="false" onAction="#manageTeacher" prefHeight="37.0" prefWidth="236.0" style="-fx-background-color: #fff;" text="O'qituvchilarni boshqarish">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
             <Button fx:id="btnLogOut" alignment="CENTER" contentDisplay="RIGHT" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="chiqish" textAlignment="CENTER" textFill="#0073ff">
                <font>
                   <Font size="18.0" />

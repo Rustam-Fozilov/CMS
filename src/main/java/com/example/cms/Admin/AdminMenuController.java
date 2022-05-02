@@ -35,6 +35,9 @@ public class AdminMenuController implements Initializable {
     private Button btnManageStudent;
 
     @FXML
+    private Button btnManageTeacher;
+
+    @FXML
     private Button btnMyProfile;
 
     @FXML
@@ -48,6 +51,9 @@ public class AdminMenuController implements Initializable {
 
     @FXML
     private Rectangle rect3;
+
+    @FXML
+    private Rectangle rect4;
 
     @FXML
     private AnchorPane defaultAdminProfilePane;
@@ -94,11 +100,13 @@ public class AdminMenuController implements Initializable {
         rect1.setVisible(true);
         rect2.setVisible(false);
         rect3.setVisible(false);
+        rect4.setVisible(false);
 
         btnMyProfile.setTextFill(Color.rgb(0, 155, 255));
+        btnMyProfile.setStyle("-fx-background-color: #fff");
         btnManageCourse.setTextFill(Color.BLACK);
         btnManageStudent.setTextFill(Color.BLACK);
-        btnMyProfile.setStyle("-fx-background-color: #fff");
+        btnManageTeacher.setTextFill(Color.BLACK);
 
         try {
             Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Admin/admin-profile.fxml"));
@@ -113,10 +121,12 @@ public class AdminMenuController implements Initializable {
         rect2.setVisible(true);
         rect1.setVisible(false);
         rect3.setVisible(false);
+        rect4.setVisible(false);
 
         btnManageCourse.setTextFill(Color.rgb(0, 155, 255));
         btnManageStudent.setTextFill(Color.BLACK);
         btnMyProfile.setTextFill(Color.BLACK);
+        btnManageTeacher.setTextFill(Color.BLACK);
         btnManageCourse.setStyle("-fx-background-color: #fff");
 
         try {
@@ -132,14 +142,37 @@ public class AdminMenuController implements Initializable {
         rect3.setVisible(true);
         rect2.setVisible(false);
         rect1.setVisible(false);
+        rect4.setVisible(false);
 
         btnManageStudent.setTextFill(Color.rgb(0, 155, 255));
+        btnManageStudent.setStyle("-fx-background-color: #fff");
         btnManageCourse.setTextFill(Color.BLACK);
         btnMyProfile.setTextFill(Color.BLACK);
-        btnManageStudent.setStyle("-fx-background-color: #fff");
+        btnManageTeacher.setTextFill(Color.BLACK);
 
         try {
             Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Admin/Students/manage-student.fxml"));
+            defaultAdminProfilePane.getChildren().removeAll();
+            defaultAdminProfilePane.getChildren().setAll(fxml);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void manageTeacher(ActionEvent actionEvent) {
+        rect4.setVisible(true);
+        rect2.setVisible(false);
+        rect1.setVisible(false);
+        rect3.setVisible(false);
+
+        btnManageTeacher.setTextFill(Color.rgb(0, 155, 255));
+        btnManageTeacher.setStyle("-fx-background-color: #fff");
+        btnManageCourse.setTextFill(Color.BLACK);
+        btnMyProfile.setTextFill(Color.BLACK);
+        btnManageStudent.setTextFill(Color.BLACK);
+
+        try {
+            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Admin/Teachers/manage-teacher.fxml"));
             defaultAdminProfilePane.getChildren().removeAll();
             defaultAdminProfilePane.getChildren().setAll(fxml);
         } catch (IOException e) {

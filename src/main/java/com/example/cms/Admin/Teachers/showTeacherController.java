@@ -1,7 +1,8 @@
-package com.example.cms.Admin.Students;
+package com.example.cms.Admin.Teachers;
 
 import com.example.cms.Database.Database;
 import com.example.cms.Database.StudentTable;
+import com.example.cms.Database.TeacherTable;
 import com.example.cms.HelloApplication;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,71 +23,71 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class showStudentController implements Initializable {
+public class showTeacherController implements Initializable {
     @FXML
-    private TableColumn<StudentTable, String> colEmail;
+    private TableColumn<TeacherTable, Integer> colId;
 
     @FXML
-    private TableColumn<StudentTable, Integer> colId;
+    private TableColumn<TeacherTable, String> colName;
 
     @FXML
-    private TableColumn<StudentTable, String> colName;
+    private TableColumn<TeacherTable, String> colPassword;
 
     @FXML
-    private TableColumn<StudentTable, String> colPhone;
+    private TableColumn<TeacherTable, String> colPhone;
 
     @FXML
-    private TableColumn<StudentTable, String> colSurname;
+    private TableColumn<TeacherTable, String> colSubject;
 
     @FXML
-    private TableColumn<StudentTable, String> colGroup;
+    private TableColumn<TeacherTable, String> colSurname;
 
     @FXML
-    private TableColumn<StudentTable, String> colSubject;
+    private TableColumn<TeacherTable, String> colUsername;
 
     @FXML
-    private TableView<StudentTable> table;
+    private AnchorPane showTeacherPane;
 
     @FXML
-    private AnchorPane showStudentPane;
+    private TableView<TeacherTable> table;
 
-    ObservableList<StudentTable> list = FXCollections.observableArrayList();
+    ObservableList<TeacherTable> list = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             Connection conn = Database.getConnection();
-            ResultSet rs = conn.createStatement().executeQuery("select * from users");
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM teachers");
 
             while (rs.next()) {
-                list.add(new StudentTable(
-                        rs.getInt("UserId"),
+                list.add(new TeacherTable(
+                        rs.getInt("TeacherId"),
                         rs.getString("Ismi"),
                         rs.getString("Familiyasi"),
                         rs.getString("Telefon"),
-                        rs.getString("Email"),
                         rs.getString("Fani"),
-                        rs.getString("Guruhi")));
+                        rs.getString("username"),
+                        rs.getString("parol")));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        colId.setCellValueFactory(new PropertyValueFactory<>("user_id"));
+        colId.setCellValueFactory(new PropertyValueFactory<>("teacher_id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("ismi"));
         colSurname.setCellValueFactory(new PropertyValueFactory<>("familiyasi"));
         colPhone.setCellValueFactory(new PropertyValueFactory<>("telefon"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colSubject.setCellValueFactory(new PropertyValueFactory<>("fani"));
-        colGroup.setCellValueFactory(new PropertyValueFactory<>("guruhi"));
+        colUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
+        colPassword.setCellValueFactory(new PropertyValueFactory<>("parol"));
         table.setItems(list);
     }
 
     public void goBack(ActionEvent actionEvent) {
         try {
-            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Admin/Students/manage-student.fxml"));
-            showStudentPane.getChildren().removeAll();
-            showStudentPane.getChildren().setAll(fxml);
+            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Admin/Teachers/manage-teacher.fxml"));
+            showTeacherPane.getChildren().removeAll();
+            showTeacherPane.getChildren().setAll(fxml);
         } catch (IOException e) {
             e.printStackTrace();
         }
