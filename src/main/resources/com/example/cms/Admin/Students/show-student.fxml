@@ -38,12 +38,11 @@
             <TableView fx:id="table" prefHeight="487.0" prefWidth="731.0">
               <columns>
                 <TableColumn fx:id="colId" prefWidth="47.0" text="id" />
-                <TableColumn fx:id="colName" prefWidth="100.0" text="Ismi" />
-                  <TableColumn fx:id="colSurname" prefWidth="106.0" text="Familiyasi" />
-                  <TableColumn fx:id="colPhone" prefWidth="105.0" text="Telefon" />
-                  <TableColumn fx:id="colEmail" prefWidth="167.0" text="Email" />
-                  <TableColumn fx:id="colSubject" minWidth="2.0" prefWidth="97.0" text="Fani" />
-                  <TableColumn fx:id="colGroup" minWidth="2.0" prefWidth="108.0" text="Guruhi" />
+                <TableColumn fx:id="colName" prefWidth="124.0" text="Ismi" />
+                  <TableColumn fx:id="colSurname" prefWidth="145.0" text="Familiyasi" />
+                  <TableColumn fx:id="colPhone" prefWidth="136.0" text="Telefon" />
+                  <TableColumn fx:id="colSubject" minWidth="2.0" prefWidth="134.0" text="Fani" />
+                  <TableColumn fx:id="colGroup" minWidth="2.0" prefWidth="125.0" text="Guruhi" />
               </columns>
             </TableView>
          </content>

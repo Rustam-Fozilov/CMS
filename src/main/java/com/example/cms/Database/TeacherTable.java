@@ -6,15 +6,17 @@ public class TeacherTable {
     private String familiyasi;
     private String telefon;
     private String fani;
+    private String guruhi;
     private String username;
     private String parol;
 
-    public TeacherTable(int teacher_id, String ismi, String familiyasi, String telefon, String fani, String username, String parol) {
+    public TeacherTable(int teacher_id, String ismi, String familiyasi, String telefon, String fani, String guruhi, String username, String parol) {
         this.teacher_id = teacher_id;
         this.ismi = ismi;
         this.familiyasi = familiyasi;
         this.telefon = telefon;
         this.fani = fani;
+        this.guruhi = guruhi;
         this.username = username;
         this.parol = parol;
     }
@@ -57,6 +59,14 @@ public class TeacherTable {
 
     public void setFani(String fani) {
         this.fani = fani;
+    }
+
+    public String getGuruhi() {
+        return guruhi;
+    }
+
+    public void setGuruhi(String guruhi) {
+        this.guruhi = guruhi;
     }
 
     public String getUsername() {

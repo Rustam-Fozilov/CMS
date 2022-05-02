@@ -35,6 +35,9 @@ public class updateTeacherController {
     private TextField subjectField;
 
     @FXML
+    private TextField groupField;
+
+    @FXML
     private TextField surnameField;
 
     @FXML
@@ -44,7 +47,7 @@ public class updateTeacherController {
     private TextField usernameField;
 
     public void updateTeacher(ActionEvent actionEvent) {
-        if (nameField.getText().equals("") || surnameField.getText().equals("") || oldPhoneField.getText().equals("") || newPhoneField.getText().equals("") || usernameField.getText().equals("") || subjectField.getText().equals("") || passwordField.getText().equals("")) {
+        if (nameField.getText().equals("") || surnameField.getText().equals("") || groupField.getText().equals("") || oldPhoneField.getText().equals("") || newPhoneField.getText().equals("") || usernameField.getText().equals("") || subjectField.getText().equals("") || passwordField.getText().equals("")) {
             statusLabel.setText("Barcha maydonlar to'ldirilishi shart");
             statusLabel.setStyle("-fx-text-fill: red");
         } else {
@@ -55,14 +58,15 @@ public class updateTeacherController {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
 
-                ps = con.prepareStatement("UPDATE teachers SET Ismi = ?, Familiyasi = ?, Telefon = ?, Fani = ?, username = ?, parol = ? WHERE Telefon = ?");
+                ps = con.prepareStatement("UPDATE teachers SET Ismi = ?, Familiyasi = ?, Telefon = ?, Fani = ?, Guruhi = ?, username = ?, parol = ? WHERE Telefon = ?");
                 ps.setString(1, nameField.getText());
                 ps.setString(2, surnameField.getText());
                 ps.setString(3, newPhoneField.getText());
                 ps.setString(4, subjectField.getText());
-                ps.setString(5, usernameField.getText());
-                ps.setString(6, passwordField.getText());
-                ps.setString(7, oldPhoneField.getText());
+                ps.setString(5, groupField.getText());
+                ps.setString(6, usernameField.getText());
+                ps.setString(7, passwordField.getText());
+                ps.setString(8, oldPhoneField.getText());
                 ps.executeUpdate();
 
                 statusLabel.setText("O'qituvchi ma'lumotlari yangilandi");

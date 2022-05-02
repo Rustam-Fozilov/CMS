@@ -1,7 +1,6 @@
 package com.example.cms.Admin.Teachers;
 
 import com.example.cms.Database.Database;
-import com.example.cms.Database.StudentTable;
 import com.example.cms.Database.TeacherTable;
 import com.example.cms.HelloApplication;
 import javafx.collections.FXCollections;
@@ -40,6 +39,9 @@ public class showTeacherController implements Initializable {
     private TableColumn<TeacherTable, String> colSubject;
 
     @FXML
+    private TableColumn<TeacherTable, String> colGroup;
+
+    @FXML
     private TableColumn<TeacherTable, String> colSurname;
 
     @FXML
@@ -66,6 +68,7 @@ public class showTeacherController implements Initializable {
                         rs.getString("Familiyasi"),
                         rs.getString("Telefon"),
                         rs.getString("Fani"),
+                        rs.getString("Guruhi"),
                         rs.getString("username"),
                         rs.getString("parol")));
             }
@@ -78,6 +81,7 @@ public class showTeacherController implements Initializable {
         colSurname.setCellValueFactory(new PropertyValueFactory<>("familiyasi"));
         colPhone.setCellValueFactory(new PropertyValueFactory<>("telefon"));
         colSubject.setCellValueFactory(new PropertyValueFactory<>("fani"));
+        colGroup.setCellValueFactory(new PropertyValueFactory<>("guruhi"));
         colUsername.setCellValueFactory(new PropertyValueFactory<>("username"));
         colPassword.setCellValueFactory(new PropertyValueFactory<>("parol"));
         table.setItems(list);

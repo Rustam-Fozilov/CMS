@@ -20,13 +20,13 @@ public class deleteStudentController {
     private AnchorPane deleteStudentPane;
 
     @FXML
-    private TextField emailField;
+    private TextField phoneField;
 
     @FXML
     private Label statusLabel;
 
     public void deleteStudent(ActionEvent actionEvent) {
-        if (emailField.getText().equals("")) {
+        if (phoneField.getText().equals("")) {
             statusLabel.setText("Maydon to'ldirilishi shart");
             statusLabel.setStyle("-fx-text-fill: red");
         } else {
@@ -37,8 +37,8 @@ public class deleteStudentController {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
 
-                ps = con.prepareStatement("DELETE FROM users WHERE Email = ?");
-                ps.setString(1, emailField.getText());
+                ps = con.prepareStatement("DELETE FROM users WHERE Telefon = ?");
+                ps.setString(1, phoneField.getText());
                 ps.executeUpdate();
 
                 statusLabel.setText("Student ma'lumotlari o'chirildi");

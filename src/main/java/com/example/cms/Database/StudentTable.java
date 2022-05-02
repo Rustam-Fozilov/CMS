@@ -3,17 +3,15 @@ package com.example.cms.Database;
 public class StudentTable {
     private String ismi;
     private String familiyasi;
-    private String email;
     private String telefon;
     private String fani;
     private String guruhi;
     private int user_id;
 
-    public StudentTable(int user_id, String ismi, String familiyasi, String telefon, String email, String fani, String guruhi) {
+    public StudentTable(int user_id, String ismi, String familiyasi, String telefon, String fani, String guruhi) {
         this.user_id = user_id;
         this.ismi = ismi;
         this.familiyasi = familiyasi;
-        this.email = email;
         this.telefon = telefon;
         this.fani = fani;
         this.guruhi = guruhi;
@@ -33,14 +31,6 @@ public class StudentTable {
 
     public void setFamiliyasi(String familiyasi) {
         this.familiyasi = familiyasi;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getTelefon() {

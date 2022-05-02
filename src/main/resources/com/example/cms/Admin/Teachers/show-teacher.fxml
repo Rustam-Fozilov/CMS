@@ -33,17 +33,18 @@
             </Label>
          </children>
       </VBox>
-      <ScrollPane layoutX="87.0" layoutY="164.0" prefHeight="490.0" prefWidth="731.0">
+      <ScrollPane layoutX="34.0" layoutY="164.0" prefHeight="490.0" prefWidth="822.0">
          <content>
-            <TableView fx:id="table" prefHeight="487.0" prefWidth="731.0">
+            <TableView fx:id="table" prefHeight="487.0" prefWidth="821.0">
                <columns>
                   <TableColumn fx:id="colId" prefWidth="47.0" text="id" />
                   <TableColumn fx:id="colName" prefWidth="108.0" text="Ismi" />
-                  <TableColumn fx:id="colSurname" prefWidth="124.0" text="Familiyasi" />
-                  <TableColumn fx:id="colPhone" prefWidth="116.0" text="Telefon" />
-                  <TableColumn fx:id="colSubject" prefWidth="107.0" text="Fani" />
-                  <TableColumn fx:id="colUsername" minWidth="2.0" prefWidth="105.0" text="username" />
-                  <TableColumn fx:id="colPassword" minWidth="2.0" prefWidth="123.0" text="parol" />
+                  <TableColumn fx:id="colSurname" prefWidth="114.0" text="Familiyasi" />
+                  <TableColumn fx:id="colPhone" prefWidth="114.0" text="Telefon" />
+                  <TableColumn fx:id="colSubject" prefWidth="112.0" text="Fani" />
+                  <TableColumn fx:id="colGroup" minWidth="2.0" prefWidth="104.0" text="Guruhi" />
+                  <TableColumn fx:id="colUsername" minWidth="2.0" prefWidth="106.0" text="username" />
+                  <TableColumn fx:id="colPassword" prefWidth="100.0" text="parol" />
                </columns>
             </TableView>
          </content>

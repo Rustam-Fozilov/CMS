@@ -24,9 +24,6 @@ import java.util.ResourceBundle;
 
 public class showStudentController implements Initializable {
     @FXML
-    private TableColumn<StudentTable, String> colEmail;
-
-    @FXML
     private TableColumn<StudentTable, Integer> colId;
 
     @FXML
@@ -56,7 +53,7 @@ public class showStudentController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
             Connection conn = Database.getConnection();
-            ResultSet rs = conn.createStatement().executeQuery("select * from users");
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM users");
 
             while (rs.next()) {
                 list.add(new StudentTable(
@@ -64,7 +61,6 @@ public class showStudentController implements Initializable {
                         rs.getString("Ismi"),
                         rs.getString("Familiyasi"),
                         rs.getString("Telefon"),
-                        rs.getString("Email"),
                         rs.getString("Fani"),
                         rs.getString("Guruhi")));
             }
@@ -76,7 +72,6 @@ public class showStudentController implements Initializable {
         colName.setCellValueFactory(new PropertyValueFactory<>("ismi"));
         colSurname.setCellValueFactory(new PropertyValueFactory<>("familiyasi"));
         colPhone.setCellValueFactory(new PropertyValueFactory<>("telefon"));
-        colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colSubject.setCellValueFactory(new PropertyValueFactory<>("fani"));
         colGroup.setCellValueFactory(new PropertyValueFactory<>("guruhi"));
         table.setItems(list);

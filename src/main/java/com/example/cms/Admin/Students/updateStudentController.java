@@ -27,13 +27,10 @@ public class updateStudentController {
     private TextField nameField;
 
     @FXML
-    private TextField newEmailField;
+    private TextField oldPhoneField;
 
     @FXML
-    private TextField oldEmailField;
-
-    @FXML
-    private TextField phoneField;
+    private TextField newPhoneField;
 
     @FXML
     private Label statusLabel;
@@ -45,7 +42,7 @@ public class updateStudentController {
     private TextField surnameField;
 
     public void updateStudent(ActionEvent actionEvent) {
-        if (nameField.getText().equals("") || surnameField.getText().equals("") || phoneField.getText().equals("") || newEmailField.getText().equals("") || oldEmailField.getText().equals("") || subjectField.getText().equals("") || groupField.getText().equals("")) {
+        if (nameField.getText().equals("") || surnameField.getText().equals("") || newPhoneField.getText().equals("") || oldPhoneField.getText().equals("") || subjectField.getText().equals("") || groupField.getText().equals("")) {
             statusLabel.setText("Barcha maydonlar to'ldirilishi shart");
             statusLabel.setStyle("-fx-text-fill: red");
         } else {
@@ -56,14 +53,13 @@ public class updateStudentController {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
 
-                ps = con.prepareStatement("UPDATE users SET Ismi = ?, Familiyasi = ?, Telefon = ?, Email = ?, Fani = ?, Guruhi = ? WHERE Email = ?");
+                ps = con.prepareStatement("UPDATE users SET Ismi = ?, Familiyasi = ?, Telefon = ?, Fani = ?, Guruhi = ? WHERE Telefon = ?");
                 ps.setString(1, nameField.getText());
                 ps.setString(2, surnameField.getText());
-                ps.setString(3, phoneField.getText());
-                ps.setString(4, newEmailField.getText());
-                ps.setString(5, subjectField.getText());
-                ps.setString(6, groupField.getText());
-                ps.setString(7, oldEmailField.getText());
+                ps.setString(3, newPhoneField.getText());
+                ps.setString(4, subjectField.getText());
+                ps.setString(5, groupField.getText());
+                ps.setString(6, oldPhoneField.getText());
                 ps.executeUpdate();
 
                 statusLabel.setText("Student ma'lumotlari yangilandi");

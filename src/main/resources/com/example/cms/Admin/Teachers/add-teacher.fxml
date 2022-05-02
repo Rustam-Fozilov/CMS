@@ -40,7 +40,7 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="205.0" layoutY="197.0" prefWidth="480.0">
+      <VBox layoutX="205.0" layoutY="170.0" prefWidth="480.0">
          <children>
             <HBox prefHeight="50.0" prefWidth="200.0">
                <children>
@@ -124,7 +124,27 @@
             </HBox>
             <HBox prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="128.0" text="username">
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="128.0" text="Guruhi">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="groupField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="50.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="130.0" text="username">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -144,7 +164,7 @@
             </HBox>
             <HBox prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="118.0" text="Parol">
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="118.0" text="parol">
                      <font>
                         <Font size="26.0" />
                      </font>
@@ -175,7 +195,7 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="statusLabel" layoutX="205.0" layoutY="162.0">
+      <Label fx:id="statusLabel" layoutX="208.0" layoutY="658.0">
          <font>
             <Font size="16.0" />
          </font>
