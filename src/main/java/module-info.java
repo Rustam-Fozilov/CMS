@@ -19,4 +19,8 @@ module com.example.cms {
     opens com.example.cms.Admin.Students to javafx.fxml;
     exports com.example.cms.Admin.Teachers;
     opens com.example.cms.Admin.Teachers to javafx.fxml;
+    exports com.example.cms.Teacher.Attendance;
+    opens com.example.cms.Teacher.Attendance to javafx.fxml;
+    exports com.example.cms.Teacher.Payment;
+    opens com.example.cms.Teacher.Payment to javafx.fxml;
 }
