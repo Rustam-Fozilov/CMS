@@ -95,12 +95,12 @@ public class Database {
                 String ismi = rs.getString("Ismi");
                 String familiyasi = rs.getString("Familiyasi");
                 String telefon = rs.getString("Telefon");
-                String email = rs.getString("Email");
                 String fani = rs.getString("Fani");
+                String guruhi = rs.getString("Guruhi");
                 String username = rs.getString("username");
                 String parol = rs.getString("parol");
 
-                teachersInformation.add(new TeacherInformation(teacher_id, ismi, familiyasi, telefon, email, fani, username, parol));
+                teachersInformation.add(new TeacherInformation(teacher_id, ismi, familiyasi, telefon, fani, guruhi, username, parol));
             }
             rs.close();
 

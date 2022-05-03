@@ -5,18 +5,18 @@ public class TeacherInformation {
     private String ismi;
     private String familiyasi;
     private String telefon;
-    private String email;
     private String fani;
+    private String guruhi;
     private String username;
     private String parol;
 
-    public TeacherInformation(int teacher_id, String ismi, String familiyasi, String telefon, String email, String fani, String username, String parol) {
+    public TeacherInformation(int teacher_id, String ismi, String familiyasi, String telefon, String fani, String guruhi, String username, String parol) {
         this.teacher_id = teacher_id;
         this.ismi = ismi;
         this.familiyasi = familiyasi;
         this.telefon = telefon;
-        this.email = email;
         this.fani = fani;
+        this.guruhi = guruhi;
         this.username = username;
         this.parol = parol;
     }
@@ -53,20 +53,20 @@ public class TeacherInformation {
         this.telefon = telefon;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getFani() {
         return fani;
     }
 
     public void setFani(String fani) {
         this.fani = fani;
+    }
+
+    public String getGuruhi() {
+        return guruhi;
+    }
+
+    public void setGuruhi(String guruhi) {
+        this.guruhi = guruhi;
     }
 
     public String getUsername() {

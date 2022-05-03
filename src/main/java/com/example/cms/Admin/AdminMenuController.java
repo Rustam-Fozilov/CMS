@@ -26,9 +26,6 @@ public class AdminMenuController implements Initializable {
     private VBox vBoxMenuBar;
 
     @FXML
-    private VBox vboxProfile;
-
-    @FXML
     private Button btnManageCourse;
 
     @FXML
@@ -57,9 +54,6 @@ public class AdminMenuController implements Initializable {
 
     @FXML
     private AnchorPane defaultAdminProfilePane;
-
-    @FXML
-    private BorderPane AdminPane;
 
     private int id;
     public void setId(int id) {
