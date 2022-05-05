@@ -1,13 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="makePaymentPane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.Teacher.Payment.MakePaymentController">
+    <children>
+        <VBox prefHeight="140.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#goBack" text="Back">
+                    <VBox.margin>
+                        <Insets left="45.0" top="40.0" />
+                    </VBox.margin>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label opacity="0.5" text="To'lov qilish">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="45.0" top="20.0" />
+                    </VBox.margin>
+                </Label>
+                <Label text="To'lov ma'lumotlarini kiriting">
+                    <font>
+                        <Font name="System Bold" size="26.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="45.0" top="5.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+        <VBox layoutX="272.0" layoutY="240.0" prefHeight="279.0" prefWidth="346.0">
+            <children>
+                <HBox prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="138.0" text="F.I.O">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="fioComb" prefHeight="30.0" prefWidth="200.0">
+                            <HBox.margin>
+                                <Insets top="10.0" />
+                            </HBox.margin>
+                        </ComboBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="139.0" text="Kurs nomi">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="courseComb" prefHeight="30.0" prefWidth="200.0">
+                            <HBox.margin>
+                                <Insets top="10.0" />
+                            </HBox.margin>
+                        </ComboBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="140.0" text="Oy nomi">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="monthComb" prefHeight="30.0" prefWidth="200.0">
+                            <HBox.margin>
+                                <Insets top="10.0" />
+                            </HBox.margin>
+                        </ComboBox>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="140.0" text="Miqdori">
+                            <font>
+                                <Font size="26.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="priceField" minHeight="30.0" prefHeight="43.0" prefWidth="200.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        <Label fx:id="statusLabel" layoutX="274.0" layoutY="517.0">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="517.0" layoutY="502.0" mnemonicParsing="false" onAction="#makePayment" prefHeight="43.0" prefWidth="95.0" style="-fx-background-color: #0073FF; -fx-background-radius: 10px;" text="OK" textAlignment="RIGHT" textFill="WHITE">
+            <font>
+                <Font size="16.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+    </children>
 </AnchorPane>

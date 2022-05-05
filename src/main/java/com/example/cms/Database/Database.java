@@ -23,11 +23,10 @@ public class Database {
                 String ismi = rs.getString("Ismi");
                 String familiyasi = rs.getString("Familiyasi");
                 String telefon = rs.getString("Telefon");
-                String email = rs.getString("Email");
                 String fani = rs.getString("Fani");
                 String guruhi = rs.getString("Guruhi");
 
-                usersInformation.add(new UserInformation(user_id, ismi, familiyasi, email, telefon, fani, guruhi));
+                usersInformation.add(new UserInformation(user_id, ismi, familiyasi, telefon, fani, guruhi));
             }
 
             rs.close();

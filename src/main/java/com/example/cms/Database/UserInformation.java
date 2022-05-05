@@ -9,11 +9,10 @@ public class UserInformation {
     private String guruhi;
     int user_id;
 
-    public UserInformation(int user_id, String ismi, String familiyasi, String email, String telefon, String fani, String guruhi) {
+    public UserInformation(int user_id, String ismi, String familiyasi, String telefon, String fani, String guruhi) {
         this.user_id = user_id;
         this.ismi = ismi;
         this.familiyasi = familiyasi;
-        this.email = email;
         this.telefon = telefon;
         this.fani = fani;
         this.guruhi = guruhi;
