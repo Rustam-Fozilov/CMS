@@ -26,9 +26,6 @@ public class AdminProfileController implements Initializable {
     private Label labelPhone;
 
     @FXML
-    private Label labelEmail;
-
-    @FXML
     private Label labelUsername;
 
     @FXML
@@ -75,14 +72,14 @@ public class AdminProfileController implements Initializable {
         ArrayList<AdminInformation> adminsInformation = db.getAdminsInformation();
         for (AdminInformation admin : adminsInformation) {
             if (this.getId() == admin.getAdmin_id()) {
-                labelEmail.setText(admin.getEmail());
+                labelUsername.setText(admin.getUsername());
             } else {
                 bool = false;
             }
         }
 
         if(!bool) {
-            labelEmail.setText("bool tengmas");
+            labelUsername.setText("bool tengmas");
         }
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));

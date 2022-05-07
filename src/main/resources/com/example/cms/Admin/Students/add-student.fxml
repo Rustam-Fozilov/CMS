@@ -40,16 +40,16 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="205.0" layoutY="209.0" prefWidth="480.0">
+      <VBox layoutX="205.0" layoutY="228.0" prefWidth="480.0">
          <children>
             <HBox prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="80.0" text="Ismi">
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="150.0" text="FIO">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nameField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="fioField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -57,27 +57,7 @@
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets bottom="15.0" left="100.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="50.0" prefWidth="200.0">
-               <children>
-                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="150.0" text="Familiyasi">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="surnameField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <HBox.margin>
-                        <Insets bottom="15.0" left="30.0" />
+                        <Insets bottom="20.0" left="30.0" />
                      </HBox.margin>
                   </TextField>
                </children>
@@ -97,7 +77,7 @@
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets bottom="15.0" />
+                        <Insets bottom="20.0" />
                      </HBox.margin>
                   </TextField>
                </children>
@@ -117,7 +97,7 @@
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets bottom="15.0" left="60.0" />
+                        <Insets bottom="20.0" left="60.0" />
                      </HBox.margin>
                   </TextField>
                </children>
@@ -137,7 +117,7 @@
                         <Insets />
                      </opaqueInsets>
                      <HBox.margin>
-                        <Insets bottom="15.0" left="60.0" />
+                        <Insets bottom="20.0" left="60.0" />
                      </HBox.margin>
                   </TextField>
                </children>
@@ -155,7 +135,7 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="statusLabel" layoutX="209.0" layoutY="563.0">
+      <Label fx:id="statusLabel" layoutX="205.0" layoutY="535.0">
          <font>
             <Font size="16.0" />
          </font>

@@ -2,18 +2,16 @@ package com.example.cms.Database;
 
 public class TeacherInformation {
     private int teacher_id;
-    private String ismi;
-    private String familiyasi;
+    private String fio;
     private String telefon;
     private String fani;
     private String guruhi;
     private String username;
     private String parol;
 
-    public TeacherInformation(int teacher_id, String ismi, String familiyasi, String telefon, String fani, String guruhi, String username, String parol) {
+    public TeacherInformation(int teacher_id, String fio, String telefon, String fani, String guruhi, String username, String parol) {
         this.teacher_id = teacher_id;
-        this.ismi = ismi;
-        this.familiyasi = familiyasi;
+        this.fio = fio;
         this.telefon = telefon;
         this.fani = fani;
         this.guruhi = guruhi;
@@ -29,20 +27,12 @@ public class TeacherInformation {
         this.teacher_id = teacher_id;
     }
 
-    public String getIsmi() {
-        return ismi;
+    public String getFio() {
+        return fio;
     }
 
-    public void setIsmi(String ismi) {
-        this.ismi = ismi;
-    }
-
-    public String getFamiliyasi() {
-        return familiyasi;
-    }
-
-    public void setFamiliyasi(String familiyasi) {
-        this.familiyasi = familiyasi;
+    public void setFio(String fio) {
+        this.fio = fio;
     }
 
     public String getTelefon() {

@@ -50,7 +50,7 @@
                                 <Font size="26.0" />
                             </font>
                         </Label>
-                        <ComboBox fx:id="fioComb" prefHeight="30.0" prefWidth="200.0">
+                        <ComboBox fx:id="fioComb" onAction="#getStudentCourse" prefHeight="30.0" prefWidth="200.0">
                             <HBox.margin>
                                 <Insets top="10.0" />
                             </HBox.margin>

@@ -20,13 +20,12 @@ public class Database {
 
             while (rs.next()) {
                 int user_id = rs.getInt("UserId");
-                String ismi = rs.getString("Ismi");
-                String familiyasi = rs.getString("Familiyasi");
+                String fio = rs.getString("FIO");
                 String telefon = rs.getString("Telefon");
                 String fani = rs.getString("Fani");
                 String guruhi = rs.getString("Guruhi");
 
-                usersInformation.add(new UserInformation(user_id, ismi, familiyasi, telefon, fani, guruhi));
+                usersInformation.add(new UserInformation(user_id, fio, telefon, fani, guruhi));
             }
 
             rs.close();
@@ -55,14 +54,12 @@ public class Database {
 
             while (rs.next()) {
                 int admin_id = rs.getInt("AdminId");
-                String ismi = rs.getString("Ismi");
-                String familiyasi = rs.getString("Familiyasi");
+                String fio = rs.getString("fio");
                 String telefon = rs.getString("Telefon");
-                String email = rs.getString("Email");
                 String username = rs.getString("username");
                 String parol = rs.getString("parol");
 
-                adminsInformation.add(new AdminInformation(admin_id, ismi, familiyasi, telefon, email, username, parol));
+                adminsInformation.add(new AdminInformation(admin_id, fio, telefon, username, parol));
             }
             rs.close();
 
@@ -91,15 +88,14 @@ public class Database {
 
             while (rs.next()) {
                 int teacher_id = rs.getInt("TeacherId");
-                String ismi = rs.getString("Ismi");
-                String familiyasi = rs.getString("Familiyasi");
+                String fio = rs.getString("FIO");
                 String telefon = rs.getString("Telefon");
                 String fani = rs.getString("Fani");
                 String guruhi = rs.getString("Guruhi");
                 String username = rs.getString("username");
                 String parol = rs.getString("parol");
 
-                teachersInformation.add(new TeacherInformation(teacher_id, ismi, familiyasi, telefon, fani, guruhi, username, parol));
+                teachersInformation.add(new TeacherInformation(teacher_id, fio, telefon, fani, guruhi, username, parol));
             }
             rs.close();
 
@@ -148,7 +144,6 @@ public class Database {
 
     public static Connection getConnection() throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
-
         return conn;
     }
  }

@@ -27,7 +27,7 @@ public class showTeacherController implements Initializable {
     private TableColumn<TeacherTable, Integer> colId;
 
     @FXML
-    private TableColumn<TeacherTable, String> colName;
+    private TableColumn<TeacherTable, String> colFIO;
 
     @FXML
     private TableColumn<TeacherTable, String> colPassword;
@@ -40,9 +40,6 @@ public class showTeacherController implements Initializable {
 
     @FXML
     private TableColumn<TeacherTable, String> colGroup;
-
-    @FXML
-    private TableColumn<TeacherTable, String> colSurname;
 
     @FXML
     private TableColumn<TeacherTable, String> colUsername;
@@ -64,8 +61,7 @@ public class showTeacherController implements Initializable {
             while (rs.next()) {
                 list.add(new TeacherTable(
                         rs.getInt("TeacherId"),
-                        rs.getString("Ismi"),
-                        rs.getString("Familiyasi"),
+                        rs.getString("FIO"),
                         rs.getString("Telefon"),
                         rs.getString("Fani"),
                         rs.getString("Guruhi"),
@@ -77,8 +73,7 @@ public class showTeacherController implements Initializable {
         }
 
         colId.setCellValueFactory(new PropertyValueFactory<>("teacher_id"));
-        colName.setCellValueFactory(new PropertyValueFactory<>("ismi"));
-        colSurname.setCellValueFactory(new PropertyValueFactory<>("familiyasi"));
+        colFIO.setCellValueFactory(new PropertyValueFactory<>("fio"));
         colPhone.setCellValueFactory(new PropertyValueFactory<>("telefon"));
         colSubject.setCellValueFactory(new PropertyValueFactory<>("fani"));
         colGroup.setCellValueFactory(new PropertyValueFactory<>("guruhi"));

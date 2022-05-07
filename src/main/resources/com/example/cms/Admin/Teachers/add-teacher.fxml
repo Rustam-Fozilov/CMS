@@ -40,36 +40,16 @@
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="205.0" layoutY="170.0" prefWidth="480.0">
+      <VBox layoutX="205.0" layoutY="181.0" prefWidth="480.0">
          <children>
             <HBox prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="80.0" text="Ismi">
+                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="150.0" text="FIO">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="nameField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <HBox.margin>
-                        <Insets bottom="15.0" left="100.0" />
-                     </HBox.margin>
-                  </TextField>
-               </children>
-            </HBox>
-            <HBox prefHeight="50.0" prefWidth="200.0">
-               <children>
-                  <Label contentDisplay="CENTER" prefHeight="50.0" prefWidth="150.0" text="Familiyasi">
-                     <font>
-                        <Font size="26.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="surnameField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
+                  <TextField fx:id="fioField" prefHeight="50.0" prefWidth="320.0" style="-fx-border-radius: 10px; -fx-border-width: 1px; -fx-border-color: #000; -fx-background-color: transparent;">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -195,7 +175,7 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="statusLabel" layoutX="208.0" layoutY="658.0">
+      <Label fx:id="statusLabel" layoutX="208.0" layoutY="605.0">
          <font>
             <Font size="16.0" />
          </font>

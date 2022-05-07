@@ -1,6 +1,5 @@
 package com.example.cms.Teacher.Payment;
 
-import com.example.cms.Database.AdminInformation;
 import com.example.cms.Database.CourseInformation;
 import com.example.cms.Database.Database;
 import com.example.cms.Database.UserInformation;
@@ -18,10 +17,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -60,7 +56,7 @@ public class MakePaymentController implements Initializable {
             ArrayList<String> courses = new ArrayList<>();
 
             for (UserInformation userInformation : usersInformation) {
-                studentsFIO.add(userInformation.getIsmi() + " " + userInformation.getFamiliyasi());
+                studentsFIO.add(userInformation.getFio());
             }
 
             for (CourseInformation courseInformation: coursesInformation) {
@@ -72,6 +68,40 @@ public class MakePaymentController implements Initializable {
             monthComb.setItems(FXCollections.observableArrayList("Yanvar", "Fevral", "Mart", "Aprel", "May", "Iyun", "Iyul", "Avgust", "Sentabr", "Oktabr", "Noyabr", "Dekabr"));
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void getStudentCourse(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        Database db = new Database();
+        db.getUserInformation();
+        db.getCourseInformation();
+
+        ArrayList<UserInformation> usersInformation = db.getUsersInformation();
+        ArrayList<String> studentCourseList = new ArrayList<>();
+
+        try {
+            Connection conn;
+            PreparedStatement ps;
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+
+            ps = conn.prepareStatement("SELECT Fani FROM users WHERE FIO = ?");
+            ps.setString(1, fioComb.getValue().toString());
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                studentCourseList.add(rs.getString("Fani"));
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        for (UserInformation user: usersInformation) {
+            if (fioComb.getValue().equals(user.getFio())) {
+                courseComb.setItems(FXCollections.observableArrayList(studentCourseList));
+            }
         }
     }
 

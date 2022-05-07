@@ -27,13 +27,10 @@ public class showStudentController implements Initializable {
     private TableColumn<StudentTable, Integer> colId;
 
     @FXML
-    private TableColumn<StudentTable, String> colName;
+    private TableColumn<StudentTable, String> colFIO;
 
     @FXML
     private TableColumn<StudentTable, String> colPhone;
-
-    @FXML
-    private TableColumn<StudentTable, String> colSurname;
 
     @FXML
     private TableColumn<StudentTable, String> colGroup;
@@ -58,8 +55,7 @@ public class showStudentController implements Initializable {
             while (rs.next()) {
                 list.add(new StudentTable(
                         rs.getInt("UserId"),
-                        rs.getString("Ismi"),
-                        rs.getString("Familiyasi"),
+                        rs.getString("FIO"),
                         rs.getString("Telefon"),
                         rs.getString("Fani"),
                         rs.getString("Guruhi")));
@@ -69,8 +65,7 @@ public class showStudentController implements Initializable {
         }
 
         colId.setCellValueFactory(new PropertyValueFactory<>("user_id"));
-        colName.setCellValueFactory(new PropertyValueFactory<>("ismi"));
-        colSurname.setCellValueFactory(new PropertyValueFactory<>("familiyasi"));
+        colFIO.setCellValueFactory(new PropertyValueFactory<>("fio"));
         colPhone.setCellValueFactory(new PropertyValueFactory<>("telefon"));
         colSubject.setCellValueFactory(new PropertyValueFactory<>("fani"));
         colGroup.setCellValueFactory(new PropertyValueFactory<>("guruhi"));

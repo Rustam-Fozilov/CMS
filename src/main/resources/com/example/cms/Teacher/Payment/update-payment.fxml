@@ -41,7 +41,7 @@
                         <Insets left="45.0" top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox fx:id="updateCombFIO" prefHeight="30.0" prefWidth="200.0">
+                  <ComboBox fx:id="updateCombFIO" onAction="#getStudentCourses" prefHeight="30.0" prefWidth="200.0">
                      <HBox.margin>
                         <Insets top="7.0" />
                      </HBox.margin>

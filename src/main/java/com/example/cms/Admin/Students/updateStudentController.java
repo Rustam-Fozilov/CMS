@@ -7,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -24,7 +23,7 @@ public class updateStudentController {
     private TextField groupField;
 
     @FXML
-    private TextField nameField;
+    private TextField fioField;
 
     @FXML
     private TextField oldPhoneField;
@@ -38,11 +37,8 @@ public class updateStudentController {
     @FXML
     private TextField subjectField;
 
-    @FXML
-    private TextField surnameField;
-
     public void updateStudent(ActionEvent actionEvent) {
-        if (nameField.getText().equals("") || surnameField.getText().equals("") || newPhoneField.getText().equals("") || oldPhoneField.getText().equals("") || subjectField.getText().equals("") || groupField.getText().equals("")) {
+        if (fioField.getText().equals("") || newPhoneField.getText().equals("") || oldPhoneField.getText().equals("") || subjectField.getText().equals("") || groupField.getText().equals("")) {
             statusLabel.setText("Barcha maydonlar to'ldirilishi shart");
             statusLabel.setStyle("-fx-text-fill: red");
         } else {
@@ -53,13 +49,12 @@ public class updateStudentController {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
 
-                ps = con.prepareStatement("UPDATE users SET Ismi = ?, Familiyasi = ?, Telefon = ?, Fani = ?, Guruhi = ? WHERE Telefon = ?");
-                ps.setString(1, nameField.getText());
-                ps.setString(2, surnameField.getText());
-                ps.setString(3, newPhoneField.getText());
-                ps.setString(4, subjectField.getText());
-                ps.setString(5, groupField.getText());
-                ps.setString(6, oldPhoneField.getText());
+                ps = con.prepareStatement("UPDATE users SET FIO = ?, Telefon = ?, Fani = ?, Guruhi = ? WHERE Telefon = ?");
+                ps.setString(1, fioField.getText());
+                ps.setString(2, newPhoneField.getText());
+                ps.setString(3, subjectField.getText());
+                ps.setString(4, groupField.getText());
+                ps.setString(5, oldPhoneField.getText());
                 ps.executeUpdate();
 
                 statusLabel.setText("Student ma'lumotlari yangilandi");

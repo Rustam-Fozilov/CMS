@@ -20,7 +20,7 @@ public class addTeacherController {
     private AnchorPane addTeacherPane;
 
     @FXML
-    private TextField nameField;
+    private TextField fioField;
 
     @FXML
     private TextField passwordField;
@@ -38,13 +38,10 @@ public class addTeacherController {
     private TextField groupField;
 
     @FXML
-    private TextField surnameField;
-
-    @FXML
     private TextField usernameField;
 
     public void addTeacher(ActionEvent actionEvent) {
-        if (nameField.getText().equals("") || surnameField.getText().equals("") || phoneField.getText().equals("") || subjectField.getText().equals("") || groupField.getText().equals("") || usernameField.getText().equals("") || passwordField.getText().equals("")) {
+        if (fioField.getText().equals("") || phoneField.getText().equals("") || subjectField.getText().equals("") || groupField.getText().equals("") || usernameField.getText().equals("") || passwordField.getText().equals("")) {
             statusLabel.setText("Barcha maydonlar to'ldirilishi shart");
             statusLabel.setStyle("-fx-text-fill: red");
         } else {
@@ -55,15 +52,14 @@ public class addTeacherController {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
 
-                ps = con.prepareStatement("INSERT INTO teachers (Ismi, Familiyasi, Telefon, Fani, Guruhi, username, parol) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                ps = con.prepareStatement("INSERT INTO teachers (FIO, Telefon, Fani, Guruhi, username, parol) VALUES (?, ?, ?, ?, ?, ?)");
 
-                ps.setString(1, nameField.getText());
-                ps.setString(2, surnameField.getText());
-                ps.setString(3, phoneField.getText());
-                ps.setString(4, subjectField.getText());
-                ps.setString(5, groupField.getText());
-                ps.setString(6, usernameField.getText());
-                ps.setString(7, passwordField.getText());
+                ps.setString(1, fioField.getText());
+                ps.setString(2, phoneField.getText());
+                ps.setString(3, subjectField.getText());
+                ps.setString(4, groupField.getText());
+                ps.setString(5, usernameField.getText());
+                ps.setString(6, passwordField.getText());
                 ps.executeUpdate();
 
                 statusLabel.setText("Muvaffaqiyatli qo'shildi");
