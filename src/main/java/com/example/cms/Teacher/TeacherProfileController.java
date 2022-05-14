@@ -1,10 +1,15 @@
 package com.example.cms.Teacher;
 
+import com.example.cms.Admin.UpdateAdminProfileController;
 import com.example.cms.Database.AdminInformation;
 import com.example.cms.Database.Database;
 import com.example.cms.Database.TeacherInformation;
+import com.example.cms.HelloApplication;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
@@ -87,5 +92,26 @@ public class TeacherProfileController implements Initializable {
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public void updateProfile(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Teacher/update-teacher-profile.fxml"));
+            Parent root = loader.load();
+            UpdateTeacherProfileController ctrl = loader.getController();
+            ctrl.setId(getId());
+            myProfilePane.getChildren().removeAll();
+            myProfilePane.getChildren().setAll(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getUpdate(String fio, String phone, String fani, String username, String password) {
+        labelFIO.setText(fio);
+        labelPhone.setText(phone);
+        labelSubject.setText(fani);
+        labelUsername.setText(username);
+        labelPassword.setText(password);
     }
 }

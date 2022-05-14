@@ -104,7 +104,7 @@
                   <Insets left="80.0" top="15.0" />
                </VBox.margin>
             </HBox>
-            <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="41.0" prefWidth="144.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="yangilash" textAlignment="CENTER" textFill="#0073ff">
+            <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#updateProfile" prefHeight="41.0" prefWidth="144.0" style="-fx-background-color: #fff; -fx-border-width: 1px; -fx-border-color: #0073ff; -fx-border-radius: 10px;" text="yangilash" textAlignment="CENTER" textFill="#0073ff">
                <font>
                   <Font size="18.0" />
                </font>

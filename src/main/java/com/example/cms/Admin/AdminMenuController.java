@@ -89,7 +89,7 @@ public class AdminMenuController implements Initializable {
         btnManageTeacher.setTextFill(Color.BLACK);
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin/admin-profile.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Admin/admin-profile.fxml"));
             Parent root = loader.load();
             AdminProfileController adminProfileController = loader.getController();
             adminProfileController.setId(getId());

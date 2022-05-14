@@ -133,6 +133,7 @@ public class UpdatePaymentController implements Initializable {
                 ps.setString(4, monthComb.getValue().toString());
                 ps.setString(5, today.toString());
                 ps.setString(6, updateCombFIO.getValue().toString());
+                ps.executeUpdate();
 
                 statusLabel.setText("To'lov ma'lumotlari yangilandi");
                 statusLabel.setStyle("-fx-text-fill: green");
