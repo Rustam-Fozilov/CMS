@@ -1,11 +1,14 @@
 package com.example.cms.Database;
 
+import javafx.scene.control.CheckBox;
+
 public class StudentTable {
     private String fio;
     private String telefon;
     private String fani;
     private String guruhi;
     private int user_id;
+    private CheckBox selected;
 
     public StudentTable(int user_id, String fio, String telefon, String fani, String guruhi) {
         this.user_id = user_id;
@@ -53,5 +56,13 @@ public class StudentTable {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public CheckBox getSelected() {
+        return selected;
+    }
+
+    public void setSelected(CheckBox selected) {
+        this.selected = selected;
     }
 }
