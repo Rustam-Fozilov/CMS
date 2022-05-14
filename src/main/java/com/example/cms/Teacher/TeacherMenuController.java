@@ -49,6 +49,16 @@ public class TeacherMenuController implements Initializable {
     @FXML
     private VBox vBoxMenuBar;
 
+    private int id;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         DropShadow dropShadow = new DropShadow();
@@ -60,16 +70,6 @@ public class TeacherMenuController implements Initializable {
         dropShadow.setOffsetY(0);
         dropShadow.setRadius(25);
         vBoxMenuBar.setEffect(dropShadow);
-
-        try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Teacher/teacher-profile.fxml"));
-            Parent root = loader.load();
-
-            defaultTeacherProfilePane.getChildren().removeAll();
-            defaultTeacherProfilePane.getChildren().setAll(root);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public void myProfile(ActionEvent actionEvent) {
@@ -83,9 +83,13 @@ public class TeacherMenuController implements Initializable {
         btnManagePayment.setTextFill(Color.BLACK);
 
         try {
-            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Teacher/teacher-profile.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Teacher/teacher-profile.fxml"));
+            Parent root = loader.load();
+            TeacherProfileController teacherProfileController = loader.getController();
+            teacherProfileController.setId(getId());
+            teacherProfileController.show();
             defaultTeacherProfilePane.getChildren().removeAll();
-            defaultTeacherProfilePane.getChildren().setAll(fxml);
+            defaultTeacherProfilePane.getChildren().setAll(root);
         } catch (IOException e) {
             e.printStackTrace();
         }

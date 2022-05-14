@@ -39,12 +39,12 @@ public class AdminProfileController implements Initializable {
 
     public int id;
 
-    public int getId() {
-        return id;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override
@@ -60,33 +60,24 @@ public class AdminProfileController implements Initializable {
         dropShadow.setOffsetY(8);
         dropShadow.setRadius(22);
         vboxProfile.setEffect(dropShadow);
+    }
 
-        boolean bool = true;
-
-        Database db = new Database();
+    public void show() {
         try {
+            Database db = new Database();
             db.getAdminInformation();
+            ArrayList<AdminInformation> adminsInformation = db.getAdminsInformation();
+
+            for (AdminInformation admin : adminsInformation) {
+                if (this.getId() == admin.getAdmin_id()) {
+                    labelFIO.setText(admin.getFio());
+                    labelPhone.setText(admin.getTelefon());
+                    labelPassword.setText(admin.getParol());
+                    labelUsername.setText(admin.getUsername());
+                }
+            }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        ArrayList<AdminInformation> adminsInformation = db.getAdminsInformation();
-        for (AdminInformation admin : adminsInformation) {
-            if (this.getId() == admin.getAdmin_id()) {
-                labelUsername.setText(admin.getUsername());
-            } else {
-                bool = false;
-            }
-        }
-
-        if(!bool) {
-            labelUsername.setText("bool tengmas");
-        }
-
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-//        LoginController loginController = fxmlLoader.getController();
-//        User user = loginController.getCurrentUser();
-//        labelEmail.setText(user.getEmail());
-//        labelUsername.setText(user.getUsername());
-
     }
 }

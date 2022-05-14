@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -62,7 +61,7 @@ public class AdminMenuController implements Initializable {
 
     public int getId() {
         return id;
-    } // getId 0 ga teng cqvoti prablema;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -75,19 +74,6 @@ public class AdminMenuController implements Initializable {
         dropShadow.setOffsetY(0);
         dropShadow.setRadius(25);
         vBoxMenuBar.setEffect(dropShadow);
-
-        try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Admin/admin-profile.fxml"));
-            Parent root = loader.load();
-            AdminProfileController ctrl2 = loader.getController();
-            ctrl2.setId(getId());
-
-            defaultAdminProfilePane.getChildren().removeAll();
-            defaultAdminProfilePane.getChildren().setAll(root);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
     public void myProfile(ActionEvent actionEvent) {
@@ -103,9 +89,13 @@ public class AdminMenuController implements Initializable {
         btnManageTeacher.setTextFill(Color.BLACK);
 
         try {
-            Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Admin/admin-profile.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin/admin-profile.fxml"));
+            Parent root = loader.load();
+            AdminProfileController adminProfileController = loader.getController();
+            adminProfileController.setId(getId());
+            adminProfileController.show();
             defaultAdminProfilePane.getChildren().removeAll();
-            defaultAdminProfilePane.getChildren().setAll(fxml);
+            defaultAdminProfilePane.getChildren().setAll(root);
         } catch (IOException e) {
             e.printStackTrace();
         }

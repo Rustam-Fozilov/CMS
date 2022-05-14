@@ -30,12 +30,12 @@
             </Rectangle>
             <HBox prefHeight="40.0" prefWidth="260.0">
                <children>
-                  <Rectangle fx:id="rect1" fill="#0073ff" height="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="5.0">
+                  <Rectangle fx:id="rect1" fill="#0073ff" height="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="5.0">
                      <HBox.margin>
                         <Insets right="20.0" top="5.0" />
                      </HBox.margin>
                   </Rectangle>
-                  <Button fx:id="btnMyProfile" minHeight="20.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="37.0" prefWidth="161.0" style="-fx-background-color: #fff;" text="Mening profilim" textFill="#0073ff">
+                  <Button fx:id="btnMyProfile" minHeight="20.0" mnemonicParsing="false" onAction="#myProfile" prefHeight="37.0" prefWidth="161.0" style="-fx-background-color: #fff;" text="Mening profilim">
                      <font>
                         <Font size="18.0" />
                      </font>

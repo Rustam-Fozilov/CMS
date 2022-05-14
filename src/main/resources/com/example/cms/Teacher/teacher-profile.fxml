@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="myProfilePane" prefHeight="720.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cms.Teacher.TeacherProfileController">
    <children>
-      <VBox fx:id="vboxProfile" layoutX="195.0" layoutY="79.0" prefHeight="560.0" prefWidth="500.0" style="-fx-background-color: #fff;">
+      <VBox fx:id="vboxProfile" layoutX="195.0" layoutY="79.0" prefHeight="560.0" prefWidth="500.0" style="-fx-background-color: #fff; -fx-background-radius: 20px;">
          <children>
             <Circle fx:id="avatar" fill="#1f93ff" radius="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0">
                <VBox.margin>

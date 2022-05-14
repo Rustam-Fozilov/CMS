@@ -4,6 +4,7 @@ import com.example.cms.Admin.AdminMenuController;
 import com.example.cms.Database.AdminInformation;
 import com.example.cms.Database.Database;
 import com.example.cms.Database.TeacherInformation;
+import com.example.cms.Teacher.TeacherMenuController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -39,8 +40,6 @@ public class LoginController implements Initializable {
     @FXML
     private PasswordField passwd;
 
-    private User currentUser;
-
     public void accessToLogin() throws IOException, ClassNotFoundException {
         Database database = new Database();
         database.getAdminInformation();
@@ -54,37 +53,15 @@ public class LoginController implements Initializable {
 
         boolean isLogged = true;
 
-//        for (AdminInformation admin: adminsInformation) {
-//            if (admin.getUsername().equals(username) && admin.getParol().equals(password)) {
-//                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("admin-menu.fxml"));
-//                Parent root2 = loader.load();
-//                AdminMenuController ctrl = loader.getController();
-//                ctrl.setId(admin.getAdmin_id());
-////                System.out.println(admin.getAdmin_id());
-//
-//                btnLogin.getScene().getWindow().hide();
-//                Stage login = new Stage();
-//                Parent root = FXMLLoader.load(getClass().getResource("admin-menu.fxml"));
-//                Scene scene = new Scene(root);
-//                login.setTitle("Admin panel");
-//                login.setResizable(false);
-//                login.setScene(scene);
-//                login.show();
-//            } else {
-//                isLogged = false;
-//            }
-//        }
-
-        for (int i = 0; i < adminsInformation.size(); i++) {
-            if (adminsInformation.get(i).getUsername().equals(username) && adminsInformation.get(i).getParol().equals(password)) {
-                FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Admin/admin-menu.fxml"));
-                Parent root2 = loader.load();
+        for (AdminInformation adminInformation : adminsInformation) {
+            if (adminInformation.getUsername().equals(username) && adminInformation.getParol().equals(password)) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin/admin-menu.fxml"));
+                Parent root = loader.load();
                 AdminMenuController ctrl = loader.getController();
-                ctrl.setId(adminsInformation.get(i).getAdmin_id()); // jonatilayotganda admin id sini tori jonatvoti, lekn AdminMenuControllerda bu id sout qlib korilsa faqat 0 cqvoti
+                ctrl.setId(adminInformation.getAdmin_id());
 
                 btnLogin.getScene().getWindow().hide();
                 Stage login = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("Admin/admin-menu.fxml"));
                 Scene scene = new Scene(root);
                 login.setTitle("Admin panel");
                 login.setResizable(false);
@@ -97,9 +74,13 @@ public class LoginController implements Initializable {
 
         for (TeacherInformation teacher : teachersInformation) {
             if (teacher.getUsername().equals(username) && teacher.getParol().equals(password)) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Teacher/teacher-menu.fxml"));
+                Parent root = loader.load();
+                TeacherMenuController ctrl = loader.getController();
+                ctrl.setId(teacher.getTeacher_id());
+
                 btnLogin.getScene().getWindow().hide();
                 Stage login = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("Teacher/teacher-menu.fxml"));
                 Scene scene = new Scene(root);
                 login.setTitle("Teacher panel");
                 login.setResizable(false);
@@ -127,10 +108,6 @@ public class LoginController implements Initializable {
         dropShadow.setOffsetY(8);
         dropShadow.setRadius(21);
         btnLogin.setEffect(dropShadow);
-    }
-
-    public User getCurrentUser(){
-        return this.currentUser;
     }
 
     public void enter(KeyEvent event) throws IOException, ClassNotFoundException {
