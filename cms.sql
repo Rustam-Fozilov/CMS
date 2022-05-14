@@ -7,6 +7,7 @@ select * from users;
 select * from teachers;
 select * from courses;
 select * from payments;
+select * from attendance;
 
 
 create table admins(
@@ -16,6 +17,15 @@ create table admins(
     username varchar(255),
     parol varchar(255),
     primary key (AdminId)
+);
+
+create table attendance(
+	AttendanceId int not null auto_increment,
+    FIO varchar(255),
+    Fani varchar(255),
+    Statusi varchar(255),
+    Sana date,
+    primary key (AttendanceId)
 );
 
 
@@ -67,7 +77,7 @@ values 	('Akmal Umarov', 'IELTS', 200000, 'Mart', '2020-05-05');
 insert into admins(FIO, Telefon, username, parol)
 values 	('Rustam Fozilov', '+998977672097', 'Rustam19', 'RustamAdmin'),
 		('Mohir Mahmudov', '+998999020352', 'Mohir19', 'MohirAdmin');
-        
+
 
 insert into users(FIO, Telefon, Fani, Guruhi)
 values 	('Akmal Umarov', '+998904450022', 'Matematika', '1 - guruh'),
@@ -86,17 +96,11 @@ values 	('IELTS', '4 oy', 'Tohir Hamidov', 1000000),
 
 
 insert into admins(username, parol)
-values 	('1', '1');       
-       
+values 	('1', '1');
+
 
 insert into teachers(username, parol)
 values 	('2', '2');
-
-
-
-
-
-
 
 
 
