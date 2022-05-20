@@ -14,7 +14,7 @@ public class Database {
             ResultSet rs;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
             ps = con.prepareStatement("SELECT * FROM users");
             rs = ps.executeQuery();
 
@@ -47,7 +47,7 @@ public class Database {
             ResultSet rs;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
 
             ps = con.prepareStatement("SELECT * FROM admins");
             rs = ps.executeQuery();
@@ -81,7 +81,7 @@ public class Database {
             ResultSet rs;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
 
             ps = con.prepareStatement("SELECT * FROM teachers");
             rs = ps.executeQuery();
@@ -116,7 +116,7 @@ public class Database {
             ResultSet rs;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
 
             ps = con.prepareStatement("SELECT * FROM courses");
             rs = ps.executeQuery();
@@ -143,7 +143,7 @@ public class Database {
 
 
     public static Connection getConnection() throws SQLException {
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
         return conn;
     }
  }

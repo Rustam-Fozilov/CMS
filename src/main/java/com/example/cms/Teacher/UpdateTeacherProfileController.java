@@ -85,7 +85,7 @@ public class UpdateTeacherProfileController {
                 PreparedStatement ps;
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
 
                 ps = con.prepareStatement("UPDATE teachers SET FIO = ?, Telefon = ?, Fani = ?, username = ?, parol = ? WHERE TeacherId = ?");
                 ps.setString(1, fioField.getText());

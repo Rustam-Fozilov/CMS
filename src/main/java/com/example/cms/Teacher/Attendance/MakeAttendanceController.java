@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MakeAttendanceController implements Initializable {
@@ -45,6 +46,11 @@ public class MakeAttendanceController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        LocalDate localDate = LocalDate.now();
+
+        ShowAttendanceController sh = new ShowAttendanceController();
+        ObservableList<AttendanceTable> shList = sh.getList();
+
         try {
             Connection conn = Database.getConnection();
             ResultSet rs = conn.createStatement().executeQuery("SELECT UserId, FIO, Fani FROM users");
@@ -66,6 +72,13 @@ public class MakeAttendanceController implements Initializable {
         colSubject.setCellValueFactory(new PropertyValueFactory<>("fani"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("select"));
         table.setItems(list);
+
+        for (int i = 0; i < shList.size(); i++) {
+            if (shList.get(i).getSana().toString().equalsIgnoreCase(localDate.toString())) {
+                list.get(i).getSelect().setDisable(true);
+            }
+        }
+
     }
 
     public void makeAttendance(ActionEvent actionEvent){
@@ -76,19 +89,26 @@ public class MakeAttendanceController implements Initializable {
             PreparedStatement ps;
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
 
             ps = con.prepareStatement("INSERT INTO attendance (FIO, Fani, Statusi, Sana) VALUES (?, ?, ?, ?)");
 
             for (AttendanceTable list: list) {
+                if (list.getSana() != null){
+                    if (list.getSana().equals(localDate)) {
+                        list.getSelect().setDisable(true);
+                    }
+                }
+
                 if (list.getSelect().isSelected()) {
-                    System.out.println(list.getFio());
+                    list.getSelect().setDisable(true);
                     ps.setString(1, list.getFio());
                     ps.setString(2, list.getFani());
                     ps.setString(3, "bor");
                     ps.setString(4, localDate.toString());
                     ps.executeUpdate();
                 } else {
+                    list.getSelect().setDisable(true);
                     ps.setString(1, list.getFio());
                     ps.setString(2, list.getFani());
                     ps.setString(3, "yo'q");

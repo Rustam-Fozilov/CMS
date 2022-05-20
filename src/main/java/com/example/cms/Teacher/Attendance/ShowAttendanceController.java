@@ -74,6 +74,26 @@ public class ShowAttendanceController implements Initializable {
         table.setItems(list);
     }
 
+    public ObservableList<AttendanceTable> getList() {
+        try {
+            Connection conn = Database.getConnection();
+            ResultSet rs = conn.createStatement().executeQuery("SELECT * FROM attendance");
+
+            while (rs.next()) {
+                list.add(new AttendanceTable(
+                        rs.getInt("AttendanceId"),
+                        rs.getString("FIO"),
+                        rs.getString("Fani"),
+                        rs.getString("Statusi"),
+                        rs.getDate("Sana")));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
     public void goBack(ActionEvent actionEvent) {
         try {
             Parent fxml = FXMLLoader.load(HelloApplication.class.getResource("Teacher/Attendance/manage-attendance.fxml"));

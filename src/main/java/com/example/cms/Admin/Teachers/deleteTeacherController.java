@@ -35,7 +35,7 @@ public class deleteTeacherController {
                 PreparedStatement ps;
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1w3r5y7i9");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms", "root", "1234");
 
                 ps = con.prepareStatement("DELETE FROM teachers WHERE Telefon = ?");
                 ps.setString(1, phoneField.getText());
